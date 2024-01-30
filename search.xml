@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/11/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>CODEFORCES ROUND 913 DIV.3</title>
     <url>/2023/12/06/div3/</url>
     <content><![CDATA[<h1 id="codeforces-round-913-div.3">CODEFORCES ROUND 913 DIV.3</h1>
@@ -115,152 +87,6 @@ $个有向关系，可以建成一张有向图，且该图有且仅有一个环�
       <tags>
         <tag>codeforces</tag>
         <tag>acm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>奇奇怪怪的线代题(1)</title>
-    <url>/2023/12/01/page-2/</url>
-    <content><![CDATA[<h1 id="一些奇奇怪怪的线代题">一些奇奇怪怪的线代题</h1>
-<h2 id="a.行列式">A.行列式</h2>
-<p><em>1.计算<span class="math inline">\(n\)</span>阶行列式</em></p>
-$$ D_n = |
-<span class="math display">\[\begin{array}{cccc}
-2\cos x &amp;1   &amp; 0 &amp; \dots &amp;0&amp;0\\
-1 &amp;2\cos x &amp; 1 &amp; \dots &amp;0&amp;0\\
-0 &amp;1 &amp;2\cos x &amp;  \dots &amp;0&amp;0\\
-
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp; 0 &amp; \dots &amp;2\cos x&amp;1\\
-0 &amp;0 &amp; 0 &amp; \dots &amp;1&amp;2 \cos x\\
-
-\end{array}\]</span>
-<p>|. $$</p>
-<p>将其按第一行展开：</p>
-$$ D_n = |
-<span class="math display">\[\begin{array}{cccc}
-2\cos x &amp;1   &amp; 0 &amp; \dots &amp;0&amp;0\\
-1 &amp;2\cos x &amp; 1 &amp; \dots &amp;0&amp;0\\
-0 &amp;1 &amp;2\cos x &amp;  \dots &amp;0&amp;0\\
-
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp; 0 &amp; \dots &amp;2\cos x&amp;1\\
-0 &amp;0 &amp; 0 &amp; \dots &amp;1&amp;2 \cos x\\
-
-\end{array}\]</span>
-| \=2x |
-<span class="math display">\[\begin{array}{cccc}
-2\cos x &amp;1    &amp; \dots &amp;0&amp;0\\
-1 &amp;2\cos x  &amp; \dots &amp;0&amp;0\\
-\vdots  &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp; \dots &amp;2\cos x&amp;1\\
-0 &amp;0  &amp; \dots &amp;1&amp;2 \cos x\\
-\end{array}\]</span>
-| - |
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;1   &amp; \dots &amp;0&amp;0\\
-0 &amp;2\cos x  &amp; \dots &amp;0&amp;0\\
-\vdots &amp; \vdots  &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp;  \dots &amp;2\cos x&amp;1\\
-0 &amp;0 &amp;  \dots &amp;1&amp;2 \cos x\\
-\end{array}\]</span>
-<p>|\= 2D_{n-1} - D_{n-2} $$</p>
-<p>因此<span
-class="math inline">\(D_n\)</span>为二阶线性递推数列，求特征根得</p>
-<p><span class="math display">\[
-\lambda_1=\cos x + i\sin x,\lambda_2=\cos x-i\sin x
-\]</span></p>
-<p>结合<span class="math inline">\(D_1=2\cos x\)</span>以及<span
-class="math inline">\(D_2 = 4\cos^2 x - 1\)</span>得</p>
-<p><span class="math display">\[
-D_n = \cos nx + \cot x\sin nx.
-\]</span></p>
-<hr />
-<p><em>2.计算n阶行列式</em></p>
-$$ D_n = |
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;1 &amp; \dots &amp;1\\
-x &amp;x &amp;\dots&amp;x\\
-x^2 &amp;x^2&amp;\dots &amp;x^2\\
-
-\vdots &amp; \vdots &amp; &amp; \vdots \\
-x^{n-2} &amp;x^{n-2}&amp;\dots &amp;x^{n-2}\\
-x^n &amp;x^n &amp; \dots &amp;x^n\\
-
-\end{array}\]</span>
-<p>|. $$</p>
-<p>考虑<span class="math inline">\(n+1\)</span>阶范德蒙德行列式</p>
-$$ |
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;1 &amp; \dots &amp;1&amp;1\\
-x &amp;x &amp;\dots&amp;x&amp;y\\
-x^2 &amp;x^2&amp;\dots &amp;x^2&amp;y^2\\
-
-\vdots &amp; \vdots &amp; &amp; \vdots &amp;\vdots\\
-x^{n-2} &amp;x^{n-2}&amp;\dots &amp;x^{n-2}&amp;y^{n-2}\\
-x^{n-1} &amp;x^{n-1}&amp;\dots &amp;x^{n-1}&amp;y^{n-1}\\
-
-x^n &amp;x^n &amp; \dots &amp;x^n&amp;y^n\\
-
-\end{array}\]</span>
-<p>|=<em>{k=1}^n(y-x_k)</em>{1j&lt;in}(x_i-x_j) $$</p>
-<p>按第<span class="math inline">\(n+1\)</span>列展开：</p>
-<p><span class="math display">\[
-D_{n+1} = A_{1,n+1} + yA_{2,n+1}+\dots +y^{n-1}A_{n,n+1}+y^nA_{n+1,n+1}
-\]</span></p>
-<p>并注意到</p>
-<p><span class="math display">\[
-A_{n,n+1} = -D_n
-\]</span></p>
-<p>以及</p>
-<p><span class="math display">\[
-\prod \limits_{k=1}^n(y-x_k) = y^n-y^{n-1}\sum_{k=1}^{n}x_k+\dots
-+(-1)^n\prod_{k=1}^{n}x_k
-\]</span></p>
-<p>从而</p>
-<p><span class="math display">\[
-D_n = \sum_{k=1}^{n}x_k\prod_{1\le j&lt;i\le n}(x_i-x_j).
-\]</span></p>
-<hr />
-<h2 id="b.证明题">B.证明题</h2>
-<p><em>设<span class="math inline">\(\{\alpha _i\}\)</span>为<span
-class="math inline">\(n-1\)</span>个线性无关的<span
-class="math inline">\(n\)</span>维向量组，<span
-class="math inline">\(\xi
-_1,\xi_2\)</span>为与该向量组向量均正交的两个<span
-class="math inline">\(n\)</span>维列向量，证明：<span
-class="math inline">\(\xi _1,\xi_2\)</span>线性相关。</em></p>
-<p>证明：将 $_1 $ 添入向量组中，考虑到正交即线性无关，包含 <span
-class="math inline">\(\xi _1\)</span> 的向量组即为空间的一组基，并设
-<span class="math inline">\(\xi_1\)</span> 在该组基下的坐标表示为<span
-class="math inline">\((k_1,k_2,\dots k_n)\)</span>即有</p>
-<p><span class="math display">\[
-\xi_1 ^T\xi _2 =(\sum_{i=1}^{n-1}k_i\alpha_i^T+k_n\xi_2^T)\xi
-_2=k_n\xi_2^T\xi_2
-\]</span></p>
-<p>以及</p>
-<p><span class="math display">\[
-\xi_1 ^T\xi _1 =(\sum_{i=1}^{n-1}k_i\alpha_i^T+k_n\xi_2^T)\xi
-_1=k_n\xi_2^T\xi_1
-\]</span></p>
-<p>从而有</p>
-<p><span class="math display">\[
-\frac{\xi_1 ^T\xi _2 }{\xi_2^T\xi_2}=\frac{\xi _1^T \xi_1}{\xi_2^T\xi_1}
-\]</span></p>
-<p>写成内积的形式：</p>
-<p><span class="math display">\[
-||(\xi_1, \xi_2)||^2 =(||\xi_2||^2)(||\xi _1||^2)
-\]</span></p>
-<p>此即欧氏空间的柯西不等式等号成立的情况，当且仅当<span
-class="math inline">\(\xi_1,\xi_2\)</span>线性相关。<span
-class="math inline">\(\square\)</span></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>代数</tag>
-        <tag>行列式</tag>
-        <tag>柯西不等式</tag>
       </tags>
   </entry>
   <entry>
@@ -644,6 +470,180 @@ class="math inline">\(l + 1 &lt; h\)</span>。</em></strong></p>
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2023/11/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>奇奇怪怪的线代题(1)</title>
+    <url>/2023/12/01/page-2/</url>
+    <content><![CDATA[<h1 id="一些奇奇怪怪的线代题">一些奇奇怪怪的线代题</h1>
+<h2 id="a.行列式">A.行列式</h2>
+<p><em>1.计算<span class="math inline">\(n\)</span>阶行列式</em></p>
+$$ D_n = |
+<span class="math display">\[\begin{array}{cccc}
+2\cos x &amp;1   &amp; 0 &amp; \dots &amp;0&amp;0\\
+1 &amp;2\cos x &amp; 1 &amp; \dots &amp;0&amp;0\\
+0 &amp;1 &amp;2\cos x &amp;  \dots &amp;0&amp;0\\
+
+\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
+0 &amp;0 &amp; 0 &amp; \dots &amp;2\cos x&amp;1\\
+0 &amp;0 &amp; 0 &amp; \dots &amp;1&amp;2 \cos x\\
+
+\end{array}\]</span>
+<p>|. $$</p>
+<p>将其按第一行展开：</p>
+$$ D_n = |
+<span class="math display">\[\begin{array}{cccc}
+2\cos x &amp;1   &amp; 0 &amp; \dots &amp;0&amp;0\\
+1 &amp;2\cos x &amp; 1 &amp; \dots &amp;0&amp;0\\
+0 &amp;1 &amp;2\cos x &amp;  \dots &amp;0&amp;0\\
+
+\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
+0 &amp;0 &amp; 0 &amp; \dots &amp;2\cos x&amp;1\\
+0 &amp;0 &amp; 0 &amp; \dots &amp;1&amp;2 \cos x\\
+
+\end{array}\]</span>
+| \=2x |
+<span class="math display">\[\begin{array}{cccc}
+2\cos x &amp;1    &amp; \dots &amp;0&amp;0\\
+1 &amp;2\cos x  &amp; \dots &amp;0&amp;0\\
+\vdots  &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
+0 &amp;0 &amp; \dots &amp;2\cos x&amp;1\\
+0 &amp;0  &amp; \dots &amp;1&amp;2 \cos x\\
+\end{array}\]</span>
+| - |
+<span class="math display">\[\begin{array}{cccc}
+1 &amp;1   &amp; \dots &amp;0&amp;0\\
+0 &amp;2\cos x  &amp; \dots &amp;0&amp;0\\
+\vdots &amp; \vdots  &amp; &amp;\vdots &amp; \vdots \\
+0 &amp;0 &amp;  \dots &amp;2\cos x&amp;1\\
+0 &amp;0 &amp;  \dots &amp;1&amp;2 \cos x\\
+\end{array}\]</span>
+<p>|\= 2D_{n-1} - D_{n-2} $$</p>
+<p>因此<span
+class="math inline">\(D_n\)</span>为二阶线性递推数列，求特征根得</p>
+<p><span class="math display">\[
+\lambda_1=\cos x + i\sin x,\lambda_2=\cos x-i\sin x
+\]</span></p>
+<p>结合<span class="math inline">\(D_1=2\cos x\)</span>以及<span
+class="math inline">\(D_2 = 4\cos^2 x - 1\)</span>得</p>
+<p><span class="math display">\[
+D_n = \cos nx + \cot x\sin nx.
+\]</span></p>
+<hr />
+<p><em>2.计算n阶行列式</em></p>
+$$ D_n = |
+<span class="math display">\[\begin{array}{cccc}
+1 &amp;1 &amp; \dots &amp;1\\
+x &amp;x &amp;\dots&amp;x\\
+x^2 &amp;x^2&amp;\dots &amp;x^2\\
+
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+x^{n-2} &amp;x^{n-2}&amp;\dots &amp;x^{n-2}\\
+x^n &amp;x^n &amp; \dots &amp;x^n\\
+
+\end{array}\]</span>
+<p>|. $$</p>
+<p>考虑<span class="math inline">\(n+1\)</span>阶范德蒙德行列式</p>
+$$ |
+<span class="math display">\[\begin{array}{cccc}
+1 &amp;1 &amp; \dots &amp;1&amp;1\\
+x &amp;x &amp;\dots&amp;x&amp;y\\
+x^2 &amp;x^2&amp;\dots &amp;x^2&amp;y^2\\
+
+\vdots &amp; \vdots &amp; &amp; \vdots &amp;\vdots\\
+x^{n-2} &amp;x^{n-2}&amp;\dots &amp;x^{n-2}&amp;y^{n-2}\\
+x^{n-1} &amp;x^{n-1}&amp;\dots &amp;x^{n-1}&amp;y^{n-1}\\
+
+x^n &amp;x^n &amp; \dots &amp;x^n&amp;y^n\\
+
+\end{array}\]</span>
+<p>|=<em>{k=1}^n(y-x_k)</em>{1j&lt;in}(x_i-x_j) $$</p>
+<p>按第<span class="math inline">\(n+1\)</span>列展开：</p>
+<p><span class="math display">\[
+D_{n+1} = A_{1,n+1} + yA_{2,n+1}+\dots +y^{n-1}A_{n,n+1}+y^nA_{n+1,n+1}
+\]</span></p>
+<p>并注意到</p>
+<p><span class="math display">\[
+A_{n,n+1} = -D_n
+\]</span></p>
+<p>以及</p>
+<p><span class="math display">\[
+\prod \limits_{k=1}^n(y-x_k) = y^n-y^{n-1}\sum_{k=1}^{n}x_k+\dots
++(-1)^n\prod_{k=1}^{n}x_k
+\]</span></p>
+<p>从而</p>
+<p><span class="math display">\[
+D_n = \sum_{k=1}^{n}x_k\prod_{1\le j&lt;i\le n}(x_i-x_j).
+\]</span></p>
+<hr />
+<h2 id="b.证明题">B.证明题</h2>
+<p><em>设<span class="math inline">\(\{\alpha _i\}\)</span>为<span
+class="math inline">\(n-1\)</span>个线性无关的<span
+class="math inline">\(n\)</span>维向量组，<span
+class="math inline">\(\xi
+_1,\xi_2\)</span>为与该向量组向量均正交的两个<span
+class="math inline">\(n\)</span>维列向量，证明：<span
+class="math inline">\(\xi _1,\xi_2\)</span>线性相关。</em></p>
+<p>证明：将 $_1 $ 添入向量组中，考虑到正交即线性无关，包含 <span
+class="math inline">\(\xi _1\)</span> 的向量组即为空间的一组基，并设
+<span class="math inline">\(\xi_1\)</span> 在该组基下的坐标表示为<span
+class="math inline">\((k_1,k_2,\dots k_n)\)</span>即有</p>
+<p><span class="math display">\[
+\xi_1 ^T\xi _2 =(\sum_{i=1}^{n-1}k_i\alpha_i^T+k_n\xi_2^T)\xi
+_2=k_n\xi_2^T\xi_2
+\]</span></p>
+<p>以及</p>
+<p><span class="math display">\[
+\xi_1 ^T\xi _1 =(\sum_{i=1}^{n-1}k_i\alpha_i^T+k_n\xi_2^T)\xi
+_1=k_n\xi_2^T\xi_1
+\]</span></p>
+<p>从而有</p>
+<p><span class="math display">\[
+\frac{\xi_1 ^T\xi _2 }{\xi_2^T\xi_2}=\frac{\xi _1^T \xi_1}{\xi_2^T\xi_1}
+\]</span></p>
+<p>写成内积的形式：</p>
+<p><span class="math display">\[
+||(\xi_1, \xi_2)||^2 =(||\xi_2||^2)(||\xi _1||^2)
+\]</span></p>
+<p>此即欧氏空间的柯西不等式等号成立的情况，当且仅当<span
+class="math inline">\(\xi_1,\xi_2\)</span>线性相关。<span
+class="math inline">\(\square\)</span></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>代数</tag>
+        <tag>行列式</tag>
+        <tag>柯西不等式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数论笔记</title>
     <url>/2024/01/28/page-3/</url>
     <content><![CDATA[<h1 id="数论笔记不断更新">数论笔记（不断更新）</h1>
@@ -785,6 +785,167 @@ x(x^{x}-1)}=1.~~~\square
       <tags>
         <tag>分析</tag>
         <tag>极限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多项式笔记</title>
+    <url>/2024/01/29/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="多项式笔记随缘更新">多项式笔记（随缘更新）</h1>
+<h2 id="基础部分">基础部分</h2>
+<h3 id="a.反演">A.反演</h3>
+<p><strong>定义A.1：称一系列数 <span class="math inline">\(F_i\)</span>
+由另一系列数 <span class="math inline">\(G_i\)</span>
+表出的运算</strong></p>
+<p><span class="math display">\[
+F_i=\sum_{j=0}^{i}A_{i,j}G_i\tag{1}
+\]</span></p>
+<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
+class="math inline">\(G_i\)</span> 的演绎，运算</strong></p>
+<p><span class="math display">\[
+G_i=\sum_{j=0}^{i}B_{i,j}F_i\tag{1&#39;}
+\]</span></p>
+<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
+class="math inline">\(G_i\)</span> 的反演.</strong></p>
+<p>(1)也可以写作矩阵形式</p>
+<p><span class="math display">\[
+(F_1,F_2,\dots,F_n)^T=\textbf{A}(G_1,G_2,\dots,G_n)^T
+\]</span></p>
+<p>(2)同理.</p>
+<p><strong>定义A.2：定义1中的 <span
+class="math inline">\(\textbf{A},\)</span> <span
+class="math inline">\(\textbf{B}\)</span>
+分别称作演绎矩阵、反演矩阵.</strong></p>
+<p>由矩阵形式不难看出</p>
+<p><strong>性质A.1：演绎矩阵、反演矩阵互逆.</strong></p>
+<p>例A.1：给定一个数列 <span class="math inline">\({A_n}\)</span>
+，其前缀和与差分运算互为反演。具体地有：</p>
+<p><span class="math display">\[
+(S_1,S_2,\dots,S_n)^T = \left (\begin{array}{cccc}1 &amp;0  &amp; 0
+&amp; \dots &amp;0&amp;0\\1 &amp;1 &amp; 0 &amp; \dots
+&amp;0&amp;0\\\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp;
+\vdots \\1 &amp;1 &amp; 1 &amp; \dots &amp;1 &amp;0\\1 &amp;1 &amp; 1
+&amp; \dots &amp;1&amp;1\\\end{array}\right)_{n}(A_1,A_2,\dots,A_n)^T
+\]</span></p>
+<p>为前缀和，</p>
+<p><span class="math display">\[
+(A_1,A_2,\dots,A_n)^T = \left (\begin{array}{cccc}1 &amp;0  &amp; 0
+&amp; \dots &amp;0&amp;0\\-1 &amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\0
+&amp; -1 &amp; 1 &amp; \dots &amp;0&amp;0\\\vdots &amp; \vdots &amp;
+\vdots &amp; &amp;\vdots &amp;\vdots \\0 &amp;0 &amp; 0 &amp; \dots
+&amp;-1&amp;1\\\end{array}\right)_{n}(S_1,S_2,\dots,S_n)^T
+\]</span></p>
+<p>为差分.不难验证</p>
+<p><span class="math display">\[
+\left (\begin{array}{cccc}1 &amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\1
+&amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\\vdots &amp; \vdots &amp;
+\vdots &amp; &amp;\vdots &amp; \vdots \\1 &amp;1 &amp; 1 &amp; \dots
+&amp;1  &amp;0\\1 &amp;1 &amp; 1 &amp; \dots
+&amp;1&amp;1\\\end{array}\right)\left (\begin{array}{cccc}1
+&amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\-1 &amp;1 &amp; 0 &amp; \dots
+&amp;0&amp;0\\0 &amp; -1 &amp; 1 &amp; \dots &amp;0&amp;0\\\vdots &amp;
+\vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\0 &amp;0 &amp; 0
+&amp; \dots &amp;-1&amp;1\\\end{array}\right) = \textbf{E}.
+\]</span></p>
+<p><strong>性质A.2：反演中系数可以转移.</strong></p>
+<p><strong>性质A.3：反演矩阵、演绎矩阵转置后，将求和从向下至下界变为向上至上界，反演关系仍然存在.</strong></p>
+<p>对于性质2，可以由矩阵逆性质简单得出.
+对于性质3，根据定义，演绎矩阵必然是三角阵，根据线性代数，三角阵的转置的逆等于原三角阵逆的转置.</p>
+<p>例A.2（二项式反演）：</p>
+<p><span class="math display">\[
+F_n=\sum_{i=0}^{n}(-1)^i{n \choose i} G_n\iff G_n=\sum_{i=0}^{n}(-1)^i{n
+\choose i} F_n
+\]</span></p>
+<p>证明：此处不用容斥证明.直接将下三角阵 <span
+class="math inline">\(\textbf{A}_{i,j}=(-1)^n {n \choose i}\)</span>
+平方计算便可得到需要的结果. <span
+class="math inline">\(\square\)</span></p>
+<p>常见的形式是将 <span class="math inline">\((-1)^i\)</span>
+移至一边，即</p>
+<p><span class="math display">\[
+F_n=\sum_{i=0}^{n}{n \choose i} G_n\iff G_n=\sum_{i=0}^{n}(-1)^{n-i}{n
+\choose i} F_n \tag{2}
+\]</span></p>
+<p>这种形式在组合数学的意义是已知使用 <span
+class="math inline">\(n\)</span> 个数中某 <span
+class="math inline">\(i\)</span>
+个数构成特殊结构的组合方案的总合下，求出用 <span
+class="math inline">\(i\)</span>
+个数构成某种特殊结构的方案数.最典型的案例是错位排列数.一般来说，反演的用处就是将题给条件适当放大直到能求出解后对解进行反演.</p>
+<hr />
+<h3 id="b.生成函数基础">B.生成函数基础</h3>
+<p><strong>定义B.1：给定一个数列 <span
+class="math inline">\(A_i\)</span> ，称</strong></p>
+<p><span class="math display">\[
+A(x)= \sum_{i=0}^{\infty} A_ix^i\tag{3}
+\]</span></p>
+<p><strong>为 <span class="math inline">\(A_i\)</span>
+的生成函数或形式幂级数环.</strong></p>
+<p>容易看出，生成函数都是多项式，可以对其进行多项式能进行的操作：</p>
+<ol type="1">
+<li>加法，满足交换律</li>
+<li>乘法，满足结合律、交换律</li>
+<li>复合，满足结合律</li>
+<li>微商，满足一元函数求导的性质</li>
+<li>乘逆元，对 <span class="math inline">\(f^{-1}\)</span>
+作泰勒展开</li>
+</ol>
+<p>由于泰勒展开的存在，如果得知一个数列的递推式，用生成函数可以求它的通项。</p>
+<p>例B.1：求贝尔数</p>
+<p><span class="math display">\[
+B_{n+1}=\sum_{i=0}^{n} {n\choose i}B_i,B_0=1
+\]</span></p>
+<p>的通项公式.</p>
+<p>设其指数生成函数为</p>
+<p><span class="math display">\[
+B(x)= \sum_{i=0}^{\infty} \frac{B_i}{i!}x^i=1+\sum_{i=0}^{\infty}
+\frac{B_{i+1}}{(i+1)!}x^{i+1}\tag{4}
+\]</span></p>
+<p>其微商为</p>
+<p><span class="math display">\[
+B&#39;(x)=\sum_{i=0}^{\infty} B_ix^{i+1}
+\]</span></p>
+<p>由递推式得</p>
+<p><span class="math display">\[
+\frac{B_{n+1}}{n!}=\sum_{i=0}^{n}\frac{B_i}{i!}\frac{1}{(n-i)!}
+\]</span></p>
+<p>将 <span class="math inline">\(e^x\)</span>
+的级数展开对应上式，即得</p>
+<p><span class="math display">\[
+B(x)=e^xB&#39;(x)
+\]</span></p>
+<p>这是一个一阶微分方程，变形得</p>
+<p><span class="math display">\[
+\frac{\mathrm dB}{B}=e^{-x}dx
+\]</span></p>
+<p>两边积分即得</p>
+<p><span class="math display">\[
+B(x)=\exp(e^x+C)
+\]</span></p>
+<p>代入边界条件即得 <span class="math inline">\(C=-1\)</span> ,于是</p>
+<p><span class="math display">\[
+B(x)=\exp(e^x-1) \tag{5}
+\]</span></p>
+<p>便是贝尔数的生成函数封闭形式.</p>
+<p>将其第一层泰勒展开，</p>
+<p><span class="math display">\[
+B(x)=\frac{1}{e}(\sum_{i=0}^{\infty}\frac{1}{i!}e^{ix})
+\]</span></p>
+<p>第二层展开，</p>
+<p><span class="math display">\[
+B(x)=\frac{1}{e}(\sum_{i=0}^{\infty}\frac{1}{i!}e^{ix})\\=\frac{1}{e}(\sum_{i=0}^{\infty}\frac{1}{i!}\sum
+_{j=0}^{\infty}\frac{1}{j!}(ix)^j)
+\]</span></p>
+<p>对比<span
+class="math inline">\((4)\)</span>，考虑到生成函数在正数上良定义，可以交换求和顺序，用
+<span class="math inline">\(n\)</span> 替换 <span
+class="math inline">\(j\)</span> 便可得出通项公式</p>
+<p><span class="math display">\[
+B_n=\frac{1}{e}\sum_{i=0}^{\infty}\frac{i^n}{i!}\tag{6}
+\]</span></p>
+<p><span class="math inline">\(\square\)</span></p>
+]]></content>
+      <tags>
+        <tag>多项式 代数</tag>
       </tags>
   </entry>
   <entry>
@@ -978,183 +1139,6 @@ class="math inline">\(\ \ \ \square\)</span></p>
       <tags>
         <tag>acm</tag>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多项式笔记</title>
-    <url>/2024/01/29/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="多项式笔记随缘更新">多项式笔记（随缘更新）</h1>
-<h2 id="基础部分">基础部分</h2>
-<h3 id="a.反演">A.反演</h3>
-<p><strong>定义A.1：称一系列数 <span class="math inline">\(F_i\)</span>
-由另一系列数 <span class="math inline">\(G_i\)</span>
-表出的运算</strong></p>
-<p><span class="math display">\[
-F_i=\sum_{j=0}^{i}A_{i,j}G_i\tag{1}
-\]</span></p>
-<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
-class="math inline">\(G_i\)</span> 的演绎，运算</strong></p>
-<p><span class="math display">\[
-G_i=\sum_{j=0}^{i}B_{i,j}F_i\tag{1&#39;}
-\]</span></p>
-<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
-class="math inline">\(G_i\)</span> 的反演.</strong></p>
-<p>(1)也可以写作矩阵形式</p>
-<p><span class="math display">\[
-(F_1,F_2,\dots,F_n)^T=\textbf{A}(G_1,G_2,\dots,G_n)^T
-\]</span></p>
-<p>(2)同理.</p>
-<p><strong>定义A.2：定义1中的 <span
-class="math inline">\(\textbf{A},\)</span> <span
-class="math inline">\(\textbf{B}\)</span>
-分别称作演绎矩阵、反演矩阵.</strong></p>
-<p>由矩阵形式不难看出</p>
-<p><strong>性质A.1：演绎矩阵、反演矩阵互逆.</strong></p>
-<p>例A.1：给定一个数列 <span class="math inline">\({A_n}\)</span>
-，其前缀和与差分运算互为反演。具体地有：</p>
-$$ (S_1,S_2,,S_n)^T = (
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\
-1 &amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\
-
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-1 &amp;1 &amp; 1 &amp; \dots &amp;1  &amp;0\\
-1 &amp;1 &amp; 1 &amp; \dots &amp;1&amp;1\\
-
-\end{array}\]</span>
-<p>)_{n}(A_1,A_2,,A_n)^T $$</p>
-<p>为前缀和，</p>
-$$ (A_1,A_2,,A_n)^T = (
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\
--1 &amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\
-0 &amp; -1 &amp; 1 &amp; \dots &amp;0&amp;0\\
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp; 0 &amp; \dots &amp;-1&amp;1\\
-
-\end{array}\]</span>
-<p>)_{n}(S_1,S_2,,S_n)^T $$</p>
-<p>为差分.不难验证</p>
-$$ (
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\
-1 &amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\
-
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-1 &amp;1 &amp; 1 &amp; \dots &amp;1  &amp;0\\
-1 &amp;1 &amp; 1 &amp; \dots &amp;1&amp;1\\
-
-\end{array}\]</span>
-)(
-<span class="math display">\[\begin{array}{cccc}
-1 &amp;0  &amp; 0 &amp; \dots &amp;0&amp;0\\
--1 &amp;1 &amp; 0 &amp; \dots &amp;0&amp;0\\
-0 &amp; -1 &amp; 1 &amp; \dots &amp;0&amp;0\\
-\vdots &amp; \vdots &amp; \vdots &amp; &amp;\vdots &amp; \vdots \\
-0 &amp;0 &amp; 0 &amp; \dots &amp;-1&amp;1\\
-
-\end{array}\]</span>
-<p>) = . $$</p>
-<p><strong>性质A.2：反演中系数可以转移.</strong></p>
-<p><strong>性质A.3：反演矩阵、演绎矩阵转置后，将求和从向下至下界变为向上至上界，反演关系仍然存在.</strong></p>
-<p>对于性质2，可以由矩阵逆性质简单得出.
-对于性质3，根据定义，演绎矩阵必然是三角阵，根据线性代数，三角阵的转置的逆等于原三角阵逆的转置.</p>
-<p>例A.2（二项式反演）：</p>
-<p><span class="math display">\[
-F_n=\sum_{i=0}^{n}(-1)^i{n \choose i} G_n\iff G_n=\sum_{i=0}^{n}(-1)^i{n
-\choose i} F_n
-\]</span></p>
-<p>证明：此处不用容斥证明.直接将下三角阵 <span
-class="math inline">\(\textbf{A}_{i,j}=(-1)^n {n \choose i}\)</span>
-平方计算便可得到需要的结果. <span
-class="math inline">\(\square\)</span></p>
-<p>常见的形式是将 <span class="math inline">\((-1)^i\)</span>
-移至一边，即</p>
-<p><span class="math display">\[
-F_n=\sum_{j=0}^{n}{n \choose i} G_n\iff G_n=\sum_{j=0}^{n}(-1)^{n-i}{n
-\choose i} F_n \tag{2}
-\]</span></p>
-<p>这种形式在组合数学的意义是已知使用 <span
-class="math inline">\(n\)</span> 个数中某 <span
-class="math inline">\(i\)</span>
-个数构成特殊结构的组合方案的总合下，求出用 <span
-class="math inline">\(i\)</span>
-个数构成某种特殊结构的方案数.最典型的案例是错位排列数.一般来说，反演的用处就是将题给条件适当放大直到能求出解后对解进行反演.</p>
-<hr />
-<h3 id="b.生成函数基础">B.生成函数基础</h3>
-<p><strong>定义B.1：给定一个数列 <span
-class="math inline">\(A_i\)</span> ，称</strong></p>
-<p><span class="math display">\[
-A(x)= \sum_{i=0}^{\infty} A_ix^i\tag{3}
-\]</span></p>
-<p><strong>为 <span class="math inline">\(A_i\)</span>
-的生成函数或形式幂级数环.</strong></p>
-<p>容易看出，生成函数都是多项式，可以对其进行多项式能进行的操作：</p>
-<ol type="1">
-<li>加法，满足交换律</li>
-<li>乘法，满足结合律、交换律</li>
-<li>复合，满足结合律</li>
-<li>微商，满足一元函数求导的性质</li>
-<li>乘逆元，对 <span class="math inline">\(f^{-1}\)</span>
-作泰勒展开</li>
-</ol>
-<p>由于泰勒展开的存在，如果得知一个数列的递推式，用生成函数可以求它的通项。</p>
-<p>例B.1：求贝尔数</p>
-<p><span class="math display">\[
-B_{n+1}=\sum_{i=0}^{n} {n\choose i}B_i,B_0=1
-\]</span></p>
-<p>的通项公式.</p>
-<p>设其指数生成函数为</p>
-<p><span class="math display">\[
-B(x)= \sum_{i=0}^{\infty} \frac{B_i}{i!}x^i=1+\sum_{i=0}^{\infty}
-\frac{B_{i+1}}{(i+1)!}x^{i+1}\tag{4}
-\]</span></p>
-<p>其微商为</p>
-<p><span class="math display">\[
-B&#39;(x)=\sum_{i=0}^{\infty} B_ix^{i+1}
-\]</span></p>
-<p>由递推式得</p>
-<p><span class="math display">\[
-\frac{B_{n+1}}{n!}=\sum_{i=0}^{n}\frac{B_i}{i!}\frac{1}{(n-i)!}
-\]</span></p>
-<p>将 <span class="math inline">\(e^x\)</span>
-的级数展开对应上式，即得</p>
-<p><span class="math display">\[
-B(x)=e^xB&#39;(x)
-\]</span></p>
-<p>这是一个一阶微分方程，变形得</p>
-<p><span class="math display">\[
-\frac{\mathrm dB}{B}=e^{-x}dx
-\]</span></p>
-<p>两边积分即得</p>
-<p><span class="math display">\[
-B(x)=\exp(e^x+C)
-\]</span></p>
-<p>代入边界条件即得 <span class="math inline">\(C=-1\)</span> ,于是</p>
-<p><span class="math display">\[
-B(x)=\exp(e^x-1) \tag{5}
-\]</span></p>
-<p>便是贝尔数的生成函数封闭形式.</p>
-<p>将其第一层泰勒展开，</p>
-<p><span class="math display">\[
-B(x)=\frac{1}{e}(\sum_{i=0}^{\infin}\frac{1}{i!}e^{ix})
-\]</span></p>
-<p>第二层展开，</p>
-<p><span class="math display">\[
-B(x)=\frac{1}{e}(\sum_{i=0}^{\infin}\frac{1}{i!}e^{ix})\\=\frac{1}{e}(\sum_{i=0}^{\infin}\frac{1}{i!}\sum
-_{j=0}^{\infin}\frac{1}{j!}(ix)^j)
-\]</span></p>
-<p>对比<span
-class="math inline">\((4)\)</span>，考虑到生成函数在正数上良定义，可以交换求和顺序，用
-<span class="math inline">\(n\)</span> 替换 <span
-class="math inline">\(j\)</span> 便可得出通项公式</p>
-<p><span class="math display">\[
-B_n=\frac{1}{e}\sum_{i=0}^{\infin}\frac{i^n}{i!}\tag{6}
-\]</span></p>
-<p><span class="math inline">\(\square\)</span></p>
-]]></content>
-      <tags>
-        <tag>多项式 代数</tag>
       </tags>
   </entry>
 </search>
