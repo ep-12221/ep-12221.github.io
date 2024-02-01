@@ -793,20 +793,32 @@ x(x^{x}-1)}=1.~~~\square
     <content><![CDATA[<h1 id="多项式笔记随缘更新">多项式笔记（随缘更新）</h1>
 <h2 id="基础部分">基础部分</h2>
 <h3 id="a.反演">A.反演</h3>
-<p><strong>定义A.1：称一系列数 <span class="math inline">\(F_i\)</span>
-由另一系列数 <span class="math inline">\(G_i\)</span>
-表出的运算</strong></p>
+<p><strong>定义A.1：称函数 <span class="math inline">\(F(i)\)</span>
+由另一函数 <span class="math inline">\(G(i)\)</span> 表出的运算 <span
+class="math inline">\(f\)</span></strong></p>
+<p><span class="math display">\[
+F(i)=f(G(i))
+\]</span></p>
+<p><strong>为 <span class="math inline">\(F(i)\)</span> 关于 <span
+class="math inline">\(G(i)\)</span> 的演绎，运算 <span
+class="math inline">\(f^{-1}\)</span></strong></p>
+<p><span class="math display">\[
+G(i)=f^{-1}(F(i))
+\]</span></p>
+<p><strong>为 <span class="math inline">\(F(i)\)</span> 关于 <span
+class="math inline">\(G(i)\)</span> 的反演.</strong></p>
+<p>关于逆运算的存在性，在这里不严格证明。</p>
+<p>计算机中主要应用的反演是离散的，上式中 <span
+class="math inline">\(F\)</span> 和 <span
+class="math inline">\(G\)</span> 通常以数列形式出现，<span
+class="math inline">\(f\)</span> 通常会是线性算子：</p>
 <p><span class="math display">\[
 F_i=\sum_{j=0}^{i}A_{i,j}G_i\tag{1}
 \]</span></p>
-<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
-class="math inline">\(G_i\)</span> 的演绎，运算</strong></p>
 <p><span class="math display">\[
 G_i=\sum_{j=0}^{i}B_{i,j}F_i\tag{1&#39;}
 \]</span></p>
-<p><strong>为 <span class="math inline">\(F_i\)</span> 关于 <span
-class="math inline">\(G_i\)</span> 的反演.</strong></p>
-<p>(1)也可以写作矩阵形式</p>
+<p>演绎与反演也会有积分形式（例如傅里叶变换和傅里叶反演），但并不在本节讨论的范围内.因此(1)也可以写作矩阵形式</p>
 <p><span class="math display">\[
 (F_1,F_2,\dots,F_n)^T=\textbf{A}(G_1,G_2,\dots,G_n)^T
 \]</span></p>
@@ -889,7 +901,7 @@ A(x)= \sum_{i=0}^{\infty} A_ix^i\tag{3}
 <li>乘逆元，对 <span class="math inline">\(f^{-1}\)</span>
 作泰勒展开</li>
 </ol>
-<p>由于泰勒展开的存在，如果得知一个数列的递推式，用生成函数可以求它的通项。</p>
+<p>由于泰勒展开的存在，如果得知一个数列的递推式，用生成函数可以求它的通项.</p>
 <p>例B.1：求贝尔数</p>
 <p><span class="math display">\[
 B_{n+1}=\sum_{i=0}^{n} {n\choose i}B_i,B_0=1
@@ -943,6 +955,194 @@ class="math inline">\(j\)</span> 便可得出通项公式</p>
 B_n=\frac{1}{e}\sum_{i=0}^{\infty}\frac{i^n}{i!}\tag{6}
 \]</span></p>
 <p><span class="math inline">\(\square\)</span></p>
+<hr />
+<h3 id="c.拉格朗日插值法">C.拉格朗日插值法</h3>
+<p>对于已知序列 <span class="math inline">\(X_i=f(x_i)\)</span>
+，考虑还原出原多项式.</p>
+<p>首先，关于复数域上 <span class="math inline">\(n\)</span>
+个多项式根能否确定一个 <span class="math inline">\(n\)</span>
+次多项式，需要由代数基本定理给出.</p>
+<p><strong>定理（代数基本定理）：任何复系数一元 <span
+class="math inline">\(n\)</span> 次多项式（<span
+class="math inline">\(n\)</span> 至少为
+1）方程在复数域上至少有一根.</strong></p>
+<p>该定理证明较为复杂，且与本节所述内容无太大关系，因此将其作为结论使用，证明将会留在附录给出.下面我们将得出本节最重要的成果</p>
+<p><strong>定理C.1（拉格朗日插值法）：数域 $ $ 上一个次数不超过 <span
+class="math inline">\(n\)</span> 的多项式 <span
+class="math inline">\(f(x)\)</span>，被它在 $ $ 中的 <span
+class="math inline">\(n+1\)</span> 个不同元素 <span
+class="math inline">\(x_i\)</span> 的函数值 <span
+class="math inline">\(y_i=f(x_i)\)</span> 所唯一确定</strong></p>
+<p><span class="math display">\[
+f(x)=\sum_{i=0}^{n}y_i\prod_{j=0,j\neq i}^n\frac{(x-x_j)}{(x_i-x_j)}
+\tag{8}
+\]</span></p>
+<p>证明：</p>
+<p>1）唯一性证明 考虑演绎</p>
+<p><span class="math display">\[
+(y_0,y_1,\dots,y_n)^T=\left (\begin{array}{cccc}1&amp; x_0 &amp; \dots
+&amp;x_{0}^{n-1}&amp;x_0^n\\1&amp; x_1 &amp; \dots
+&amp;x_{1}^{n-1}&amp;x_1^n\\ \vdots &amp; \vdots &amp; &amp;\vdots
+&amp;\vdots \\1&amp; x_n &amp; \dots
+&amp;x_{n}^{n-1}&amp;x_n^n\\\end{array}\right)(a_0,a_1,\dots,a_n)^T
+\tag{9}
+\]</span></p>
+<p>为每个函数值对应系数的矩阵表示，注意到演绎矩阵 <span
+class="math inline">\(\textbf{V}\)</span> 为范德蒙德矩阵，有如下引理</p>
+<p><strong>引理C.1：对于范德蒙德行列式，有如下结论</strong></p>
+<p><span class="math display">\[
+|\textbf{V}|= \left |\begin{array}{cccc}1&amp; x_0 &amp; \dots
+&amp;x_{0}^{n-1}&amp;x_0^n\\1&amp; x_1 &amp; \dots
+&amp;x_{1}^{n-1}&amp;x_1^n\\ \vdots &amp; \vdots &amp; &amp;\vdots
+&amp;\vdots \\1&amp; x_n &amp; \dots
+&amp;x_{n}^{n-1}&amp;x_n^n\\\end{array}\right|=\prod_{0\leq i&lt;j\leq
+n}(x_j-x_i)
+\]</span></p>
+<p>证明留在附录给出.</p>
+<p>将 <span class="math inline">\((9)\)</span> 看作线性方程组，由于
+<span class="math inline">\(x_i\)</span> 互不相等，范德蒙德行列式不为
+<span
+class="math inline">\(0\)</span>，根据<strong>克拉默法则</strong>，方程有且仅有唯一解.唯一性得证.</p>
+<p>2）必要性显然</p>
+<p>3）充分性证明 根据克拉默法则，<span
+class="math inline">\((9)\)</span> 的解为</p>
+<p><span class="math display">\[
+a_i=\frac{|\textbf{V}_{i}|}{|\textbf{V}|},i=0,1,\dots,n
+\]</span></p>
+<p>其中 <span class="math inline">\(|\textbf{V}_{i}|\)</span>
+为将原矩阵次数为 <span class="math inline">\(i\)</span> 的列替换为 <span
+class="math inline">\((y_0,y_1,\dots,y_n)^T\)</span>
+的行列式.因此我们有</p>
+<p><span class="math display">\[
+f(x)=\sum_{i=0}^n\frac{|\textbf{V}_{i}|}{|\textbf{V}|}x^i
+\]</span></p>
+<p>我们将 <span class="math inline">\(|\textbf{V}_{i}|\)</span>
+按被替换的那列展开，即有</p>
+<p><span class="math display">\[
+|\textbf{V}_{i}|=\sum_{j=0}^ny_j |\textbf{V}_{ji}|
+\]</span></p>
+<p>其中 <span class="math inline">\(|\textbf{V}_{ji}|\)</span>
+为代数余子式.因此</p>
+<p><span class="math display">\[
+f(x)=\sum_{i=0}^n\frac{|\textbf{V}_{i}|}{|\textbf{V}|}x^i=\sum_{i=0}^n\frac{\sum_{j=0}^ny_j
+|\textbf{V}_{ji}|}{|\textbf{V}|}x^i=\frac{1}{|\textbf{V}|}\sum_{j=0}^ny_j\sum_{i=0}^nx^i|\textbf{V}_{ji}|
+\]</span></p>
+<p>其中后项关于 <span class="math inline">\(i\)</span>
+的求和事实上是将范德蒙德行列式</p>
+<p><span class="math display">\[
+\left |\begin{array}{cccc}1&amp; x_0 &amp; \dots
+&amp;x_{0}^{n-1}&amp;x_0^n\\1&amp; x_1 &amp; \dots
+&amp;x_{1}^{n-1}&amp;x_1^n\\ \vdots &amp; \vdots &amp; &amp;\vdots
+&amp;\vdots \\1&amp; x_n &amp; \dots
+&amp;x_{n}^{n-1}&amp;x_n^n\\\end{array}\right|
+\]</span></p>
+<p>第 <span class="math inline">\(j + 1\)</span> 行按照将 <span
+class="math inline">\(x_j^i\)</span> 替换为 <span
+class="math inline">\(x^i\)</span> 的另一范德蒙德行列式，因此由引理1</p>
+<p><span class="math display">\[
+\sum_{i=0}^nx^i|\textbf{V}_{ji}|=\prod_{0\leq p &lt;q\leq n}^{p,q\neq
+j}(x_q-x_p)\prod_{0\leq r \leq n}^{r \neq j}(x-x_r)
+\]</span></p>
+<p>从而</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{|\textbf{V}|}\sum_{j=0}^ny_j\sum_{i=0}^nx^i|\textbf{V}_{ji}|=\sum_{j=0}^ny_j\frac{\prod_{1\leq
+p &lt;q\leq n}^{p,q\neq j}(x_q-x_p)\prod_{1\leq r \leq n}^{r \neq
+j}(x-x_r)}{\prod_{1\leq p&lt;q\leq
+n}(x_q-x_p)}\\=\sum_{i=0}^{n}y_i\prod_{j=0,j\neq
+i}^n\frac{(x-x_j)}{(x_i-x_j)} .
+\]</span></p>
+<p><span class="math inline">\(\square\)</span></p>
+<p>代码先咕着（</p>
+<hr />
+<h3 id="d.快速多项式乘法">D.快速多项式乘法</h3>
+<p>快速傅里叶变换算法可以在 <span class="math inline">\(O(n \log
+n)\)</span> 时间内求出两个多项式的乘积.</p>
+<p>首先阐述卷积定义以方便下文叙述.</p>
+<p><strong>定义D.1：将关于两个可积函数 <span
+class="math inline">\(f(x),g(x)\)</span>
+的生成一个新函数的运算</strong></p>
+<p><span class="math display">\[
+h(x)= \int_{-\infty}^{+\infty}f(x- t)g(x)dt \tag{7}
+\]</span></p>
+<p><strong>称为函数的卷积运算，记作</strong></p>
+<p><span class="math display">\[
+h(x)=f(x)*g(x)
+\]</span></p>
+<p>此处的函数可以是离散函数，将积分变为求和即可.</p>
+<p>考察两个多项式</p>
+<p><span class="math display">\[
+f(x)=\sum_{i=0}^{n}a_ix^i,g(x)=\sum_{i=0}^{n}b_ix^i
+\]</span></p>
+<p>若想求出两多项式的乘积 <span
+class="math inline">\(h(x)=f(x)g(x)\)</span> 的<strong>系数</strong>
+<span
+class="math inline">\({c_i}\)</span>，朴素的想法是直接将括号打开，一个对着另一个乘，即</p>
+<p><span class="math display">\[
+c_kx^k=\sum_{i=0}^{k}a_{k-i}x^{k-i}g_{i}x^i \tag{7&#39;}
+\]</span></p>
+<p>这事实上正是对 <span class="math inline">\(a_i,b_i\)</span>
+进行卷积操作，那么我们便可以有朴素的 <span
+class="math inline">\(O(n^2)\)</span> 算法求出 <span
+class="math inline">\(c_i\)</span> .</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const int N = 200050;</span><br><span class="line">int f[2 * N],g[N],c[N];</span><br><span class="line"></span><br><span class="line">void conv()&#123;</span><br><span class="line">	for(int i = 0;i &lt;= N;i++)&#123;</span><br><span class="line">        	for(int j = 0;j &lt;= N;j++)&#123;</span><br><span class="line">            		c[i + j] += g[i] * f[i];</span><br><span class="line">        	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这样的算法可行但效率不高，下面分两部分来介绍优化过程.</p>
+<h4 id="离散傅里叶变换dft">1.离散傅里叶变换（DFT）</h4>
+<p>DFT的核心思想是用<strong>函数值还原系数</strong>.</p>
+<p>如果我们已知一个多项式的函数值，利用拉格朗日插值法可以在已知函数值和点值的情况下求出原函数的系数，下面考虑一种性质非常好的插值</p>
+<p><strong>定理D.1（DFT）：对于演绎</strong></p>
+<p><span class="math display">\[
+X_k=\sum_{i=0}^{n-1}a_i\omega_n^{ik} \tag{10}
+\]</span></p>
+<p><strong>其反演为</strong></p>
+<p><span class="math display">\[
+a_k=\frac{1}{n}\sum_{i=0}^{n-1}X_i\omega_n^{-ik} \tag{10&#39;}
+\]</span></p>
+<p>其中 <span class="math inline">\(\omega_n\)</span> 表示方程 <span
+class="math inline">\(x^n=-1\)</span> 的单位根.我们将 <span
+class="math inline">\((8)\)</span> 称为离散傅里叶变换，<span
+class="math inline">\((8&#39;)\)</span> 称为逆离散傅里叶变换.</p>
+<p>该定理在多项式上的意义是把 <span class="math inline">\(n\)</span>
+次单位根带进了多项式里，得到了 <span class="math inline">\(n\)</span>
+个值，进而反求出系数.</p>
+<p>证明：</p>
+<p><span class="math display">\[
+\frac{1}{n}\sum_{i=0}^{n-1}X_i\omega_n^{-ik}\\=\frac{1}{n}\sum_{i=0}^{n-1}\sum_{j=0}^{n-1}a_j\omega_n^{ij}\omega_n^{-ik}\\=\frac{1}{n}\sum_{i=0}^{n-1}\sum_{j=0}^{n-1}a_j\omega_n^{i(j-k)}
+\]</span></p>
+<p>若 <span class="math inline">\(j=k\)</span>，显然总贡献值为 <span
+class="math inline">\(na_i\)</span>；</p>
+<p>若 <span class="math inline">\(j\neq k\)</span>，贡献为</p>
+<p><span class="math display">\[
+\sum_{i=0}^{n-1}\omega_n^{i(j-k)}a_{j-k+k}=0
+\]</span></p>
+<p>从而推论成立.<span class="math inline">\(\square\)</span></p>
+<p>这样的插值正逆极度对称，可以用相同的方法计算.</p>
+<h4 id="多项式分治">2.多项式分治</h4>
+<p>继续考虑单位根插值，我们考虑将多项式补成 <span
+class="math inline">\(2^n\)</span>
+次项后按<strong>奇偶分治</strong>，设</p>
+<p><span class="math display">\[
+FL(x)=\sum_{i=0}^{n/2-1}a_{2i}x^i,FR(x)=\sum_{i=1}^{ n/2-1}a_{2i}x^i
+\]</span></p>
+<p>即有</p>
+<p><span class="math display">\[
+f(x)=FL(x^2)+xFR(x^2)
+\]</span></p>
+<p>将单位根代入，不难推出如下分治</p>
+<p><span class="math display">\[
+f(\omega_n^k)=FL(\omega_n^{2k})+\omega_n^{k}FR(\omega_n^{2k}),\\f(\omega_n^{k/2+n})=FL(\omega_n^{2k})-\omega_n^kFR(\omega_n^{2k}),k\in[0,\frac{n}{2})
+\tag{11}
+\]</span></p>
+<p>这允许我们在 <span class="math inline">\(O(n\log n)\)</span>
+复杂度下求出 <span class="math inline">\(f\)</span> 的 <span
+class="math inline">\(n\)</span>
+个单位根点值表示.具体地，将大的区间不断按奇偶分半递归，回溯时更新原函数值.</p>
+<h4 id="最终实现">3.最终实现</h4>
+<p>终于可以回到多项式乘法了.</p>
+<p>算法流程很简单：将所给多项式 <span class="math inline">\(f,g\)</span>
+分治求出单位根点值，将多项式点值对应相乘后用逆 DFT 还原系数.</p>
+<p>代码以洛谷P3803为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">complex&lt;double&gt; f[5000050],g[5000050];</span><br><span class="line">complex&lt;double&gt; tmp[5000050];</span><br><span class="line">int tag[5000050];</span><br><span class="line">void dft(complex&lt;double&gt; *ff,int n,int flg)&#123;</span><br><span class="line">    if(n == 1) return;</span><br><span class="line">    for(int i = 0;i &lt; n;i++)tmp[i] = ff[i];</span><br><span class="line">    for(int i = 0;i &lt; n;i++)&#123;</span><br><span class="line">        if(i &amp; 1) ff[n / 2 + i / 2] = tmp[i];</span><br><span class="line">        else ff[i / 2] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    complex&lt;double&gt; *q = ff,*p = ff + n / 2;</span><br><span class="line">    dft(q,n/2,flg),dft(p,n/2,flg);</span><br><span class="line">    complex&lt;double&gt; cur(1,0),step(cos(2 * PI/ n) ,sin(2 * PI * flg / n));</span><br><span class="line">    for(int k = 0;k &lt; n / 2;k++)&#123;</span><br><span class="line">        tmp[k] = q[k] + cur * p[k];</span><br><span class="line">        tmp[k + n / 2] = q[k] - cur * p[k];</span><br><span class="line">        cur *= step;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0;i &lt; n;i++)ff[i] = tmp[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void solve() &#123;</span><br><span class="line">    int n,m;cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    for(int i = 0;i &lt;= n;i++)&#123;int x;cin&gt;&gt;x;f[i] = x;&#125;</span><br><span class="line">    for(int j = 0;j &lt;= m;j++)&#123;int x;cin&gt;&gt;x;g[j] = x;&#125;</span><br><span class="line">    int t = 1;</span><br><span class="line">    while(t &lt; n + m + 2) t&lt;&lt;=1;</span><br><span class="line">    dft(f,t,1),dft(g,t,1);</span><br><span class="line">    for(int i = 0;i &lt; t;i++) f[i] = f[i] * g[i];</span><br><span class="line">    dft(f,t,-1);</span><br><span class="line">    int flg = 1;</span><br><span class="line">    for(int i = 0;i &lt;= m + n;i++)cout&lt;&lt;int(f[i].real() / t + 0.50)&lt;&lt;&quot; &quot;;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这就是基础的快速多项式乘法的分治写法.</p>
 ]]></content>
       <tags>
         <tag>多项式 代数</tag>
