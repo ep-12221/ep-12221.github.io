@@ -1341,4 +1341,156 @@ class="math inline">\(\ \ \ \square\)</span></p>
         <tag>分析</tag>
       </tags>
   </entry>
+  <entry>
+    <title>有限群</title>
+    <url>/2024/07/09/%E6%8A%BD%E4%BB%A3%EF%BC%9A%E7%BE%A4%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="群论补足1有限群">群论补足1：有限群</h1>
+<h2 id="群的陪集和分拆">群的陪集和分拆</h2>
+<blockquote>
+<p>定义1：设群 <span class="math inline">\(H&lt;G\)</span>，对任意 <span
+class="math inline">\(a \in G\)</span> ，称</p>
+<p><span class="math display">\[
+aH=\{ax:x\in H\} \tag1
+\]</span></p>
+<p>为 <span class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的左（右）陪集.</p>
+</blockquote>
+<p>可以证明陪集构成群的一个分拆.先引入如下引理</p>
+<blockquote>
+<p>引理1：设映射</p>
+<p><span class="math display">\[
+f:H\to aH \\ x \to ax
+\]</span></p>
+<p>该映射为满射.</p>
+</blockquote>
+<p><em>证明：只需证对任意 <span class="math inline">\(x,y \in H\)</span>
+有 <span class="math inline">\(x=y \iff
+f(x)=f(y)\)</span>.充分性显然.必要性根据群的消去律也是显然的.</em></p>
+<p>同时可以有如下命题</p>
+<blockquote>
+<p>命题1：对于群 <span class="math inline">\(H&lt;G\)</span> ，不同元素
+<span class="math inline">\(a,b\)</span> 生成的陪集 <span
+class="math inline">\(aH,bH\)</span> 要么相等，要么不交。</p>
+</blockquote>
+<p><em>证明：假设 <span class="math inline">\(aH \cap bH \neq
+\empty\)</span>， <span class="math inline">\(ah_1 = bh_2 \in aH \cap
+bH\)</span>，由对称性只需证 <span class="math inline">\(aH \subset
+bH\)</span>. 任取 <span class="math inline">\(ah \in aH\)</span>，就有
+<span class="math inline">\(ah = (bh_2h_1^{-1})h=b(h_2h_1^{-1}h) \in
+bH\)</span>（利用假设）.这就完成了证明.</em></p>
+<p>因此，陪集构成了群的一个分拆.下面由陪集引入商集的概念</p>
+<blockquote>
+<p>定义2：设群 <span class="math inline">\(H&lt;G\)</span> ，将 <span
+class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的所有左陪集构成的集合</p>
+<p><span class="math display">\[
+S:=\{aH:a\in G\} \tag2
+\]</span></p>
+<p>称作 <span class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的商集，记作</p>
+<p><span class="math display">\[
+G/H
+\]</span></p>
+<p>同时称这个商集的大小为 <span class="math inline">\(H\)</span> 在
+<span class="math inline">\(G\)</span> 中的指数，记作</p>
+<p><span class="math display">\[
+[G:H]=|G/H| \tag3
+\]</span></p>
+</blockquote>
+<p>综合上述引理及命题，我们就有</p>
+<blockquote>
+<p>定理1（拉格朗日定理）：对于群 <span
+class="math inline">\(H&lt;G\)</span>，有</p>
+<p><span class="math display">\[
+|G|=[G:H]|H| \tag4
+\]</span></p>
+</blockquote>
+<p><em>证明：<span class="math inline">\(|G|=|\cup_{a \in I}aH|=\sum_{a
+\in I}|aH|=\sum_{a \in I}|H|=[G:H]|H|\)</span>，其中 <span
+class="math inline">\(I\)</span>
+为陪集不交的元素集合，它的大小就是指数.</em></p>
+<p>这就有了子群的阶整除群的阶的推论，这一点是显而易见的.</p>
+<p>我们考察何时两个陪集会相等，有如下引理</p>
+<blockquote>
+<p>引理2：对于 <span class="math inline">\(G&lt;H\)</span>，陪集 <span
+class="math inline">\(aH=bH\)</span> 的充要条件是 <span
+class="math inline">\(b^{-1}a \in H\)</span>.</p>
+</blockquote>
+<p><em>证明：考虑等价转换，只需证陪集 <span
+class="math inline">\(aH=H\)</span> 的充要条件是 <span
+class="math inline">\(a \in H\)</span>.</em></p>
+<p><em>必要性：根据群的封闭性立得 <span class="math inline">\(aH \subset
+H\)</span>.同理有 <span class="math inline">\(a^{-1}H \subset
+H\)</span>.立得结论.</em></p>
+<p><em>充分性： <span class="math inline">\(a=ae \in
+aH\)</span>.</em></p>
+<p>根据上面的定理，我们有关于子群的重要定理</p>
+<blockquote>
+<p>定理2：对于群 <span class="math inline">\(K&lt;G&lt;H\)</span> 有</p>
+<p><span class="math display">\[
+[H:K]=[G:K][H:G] \tag5
+\]</span></p>
+</blockquote>
+<p><em>证明：根据 <span
+class="math inline">\((4)\)</span>，这是显然的.</em></p>
+<p>我们考察两个群 <span class="math inline">\(H,K\)</span>
+的元素互相乘积所构成的集合</p>
+<p><span class="math display">\[
+HK=\{hk:h\in H,k\in K\}
+\]</span></p>
+<p>一般地，群的乘积不是一个群.关于群的乘积是否是群有如下命题</p>
+<blockquote>
+<p>命题2：群的乘积是群当且仅当 <span
+class="math inline">\(HK=KH\)</span>.</p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>充分性：设 <span
+class="math inline">\(h_1k_1h_2k_2=e\)</span>，显然有 <span
+class="math inline">\(h_2k_2=k_1^{-1}h_1^{-1} \in
+KH\)</span>，根据对称性立得.</em></p>
+<p><em>必要性：与群的定义一一对照立得.</em></p>
+<p>我们考察乘积的大小，有如下定理</p>
+<blockquote>
+<p>定理3：对于群 <span class="math inline">\(K,H&lt;G\)</span>，有</p>
+<p><span class="math display">\[
+|HG|=\frac{|H||K|}{|H\cap K|} \tag6
+\]</span></p>
+</blockquote>
+<p><em>证明：微调至</em></p>
+<p><span class="math display">\[
+\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|} \tag{6&#39;}
+\]</span></p>
+<p><em>等号右端可依照陪集分割 <span class="math inline">\(H\)</span>
+构成一个指标集 <span class="math inline">\(I\)</span>
+，使得其中元素陪集不交并为 <span
+class="math inline">\(H\)</span>.</em></p>
+<p><span class="math display">\[
+H=\cup_{h\in I}h(H \cap K)\tag7
+\]</span></p>
+<p><em>等式左端同样可以写成类似形式：</em></p>
+<p><span class="math display">\[
+HK=\cup_{h\in I&#39;} hK\tag8
+\]</span></p>
+<p><em>注意，此时不需要关心 <span class="math inline">\(HK\)</span>
+是否构成一个群.我们考虑证明 <span
+class="math inline">\(|I|=|I&#39;|\)</span>.尝试构造映射</em></p>
+<p><span class="math display">\[
+f:h(K)\to h(H \cap K)\tag9
+\]</span></p>
+<p><em>只需证对任意 <span class="math inline">\(xK,yK：x,y\in H\)</span>
+有 <span class="math inline">\(xK=yK \iff f(xK)=f(yK)\)</span>.</em></p>
+<p><em>设 <span class="math inline">\(xK=yK\)</span>，根据引理2，我们有
+<span class="math inline">\(y^{-1}x \in K\)</span>，因此有 <span
+class="math inline">\(y^{-1}x \in H \cap
+K\)</span>.再次根据引理2即可得证.</em></p>
+<hr />
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>代数</tag>
+        <tag>群论</tag>
+      </tags>
+  </entry>
 </search>
