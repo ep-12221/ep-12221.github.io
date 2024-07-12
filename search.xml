@@ -1344,231 +1344,160 @@ class="math inline">\(\ \ \ \square\)</span></p>
   <entry>
     <title>有限群</title>
     <url>/2024/07/09/%E6%8A%BD%E4%BB%A3%EF%BC%9A%E7%BE%A4%E8%AE%BA/</url>
-    <content><![CDATA[<h1 id="群论补足1有限群">群论补足1：有限群</h1>
+    <content><![CDATA[<h1>群论补足1：有限群</h1>
 <h2 id="群的陪集和分拆">群的陪集和分拆</h2>
 <blockquote>
-<p>定义1：设群 <span class="math inline">\(H&lt;G\)</span>，对任意 <span
-class="math inline">\(a \in G\)</span> ，称</p>
-<p><span class="math display">\[
-aH=\{ax:x\in H\} \tag1
-\]</span></p>
-<p>为 <span class="math inline">\(G\)</span> 关于 <span
-class="math inline">\(H\)</span> 的左（右）陪集.</p>
+<p>定义1：设群 $H&lt;G$，对任意 $a \in G$ ，称</p>
+<p>$$<br>
+aH={ax:x\in H} \tag1<br>
+$$</p>
+<p>为 $G$ 关于 $H$ 的左（右）陪集.</p>
 </blockquote>
 <p>可以证明陪集构成群的一个分拆.先引入如下引理</p>
 <blockquote>
 <p>引理1：设映射</p>
-<p><span class="math display">\[
-f:H\to aH  \\  x \to ax
-\]</span></p>
+<p>$$<br>
+f:H\to aH  \  x \to ax<br>
+$$</p>
 <p>该映射为满射.</p>
 </blockquote>
-<p><em>证明：只需证对任意 <span class="math inline">\(x,y \in H\)</span>
-有 <span class="math inline">\(x=y \iff
-f(x)=f(y)\)</span>.充分性显然.必要性根据群的消去律也是显然的.</em></p>
+<p><em>证明：只需证对任意 $x,y \in H$ 有 $x=y \iff f(x)=f(y)$.充分性显然.必要性根据群的消去律也是显然的.</em></p>
 <p>同时可以有如下论断</p>
 <blockquote>
-<p>论断1：对于群 <span class="math inline">\(H&lt;G\)</span> ，不同元素
-<span class="math inline">\(a,b\)</span> 生成的陪集 <span
-class="math inline">\(aH,bH\)</span> 要么相等，要么不交。</p>
+<p>论断1：对于群 $H&lt;G$ ，不同元素 $a,b$ 生成的陪集 $aH,bH$ 要么相等，要么不交。</p>
 </blockquote>
-<p><em>证明：假设 <span class="math inline">\(aH \cap bH \neq
-\empty\)</span>， <span class="math inline">\(ah_1 = bh_2 \in aH \cap
-bH\)</span>，由对称性只需证 <span class="math inline">\(aH \subset
-bH\)</span>. 任取 <span class="math inline">\(ah \in aH\)</span>，就有
-<span class="math inline">\(ah = (bh_2h_1^{-1})h=b(h_2h_1^{-1}h) \in
-bH\)</span>（利用假设）.这就完成了证明.</em></p>
+<p><em>证明：假设 $aH \cap bH \neq \empty$， $ah_1 = bh_2 \in aH \cap bH$，由对称性只需证 $aH \subset bH$. 任取 $ah \in aH$，就有 $ah = (bh_2h_1^{-1})h=b(h_2h_1^{-1}h) \in bH$（利用假设）.这就完成了证明.</em></p>
 <p>因此，陪集构成了群的一个分拆.下面由陪集引入商集的概念</p>
 <blockquote>
-<p>定义2：设群 <span class="math inline">\(H&lt;G\)</span> ，将 <span
-class="math inline">\(G\)</span> 关于 <span
-class="math inline">\(H\)</span> 的所有左陪集构成的集合</p>
-<p><span class="math display">\[
-S:=\{aH:a\in G\} \tag2
-\]</span></p>
-<p>称作 <span class="math inline">\(G\)</span> 关于 <span
-class="math inline">\(H\)</span> 的商集，记作</p>
-<p><span class="math display">\[
-G/H
-\]</span></p>
-<p>同时称这个商集的大小为 <span class="math inline">\(H\)</span> 在
-<span class="math inline">\(G\)</span> 中的指数，记作</p>
-<p><span class="math display">\[
-[G:H]=|G/H| \tag3
-\]</span></p>
+<p>定义2：设群 $H&lt;G$ ，将 $G$ 关于 $H$ 的所有左陪集构成的集合</p>
+<p>$$<br>
+S:={aH:a\in G} \tag2<br>
+$$</p>
+<p>称作 $G$ 关于 $H$ 的商集，记作</p>
+<p>$$<br>
+G/H<br>
+$$</p>
+<p>同时称这个商集的大小为 $H$ 在 $G$ 中的指数，记作</p>
+<p>$$<br>
+[G:H]=|G/H| \tag3<br>
+$$</p>
 </blockquote>
 <p>综合上述引理及命题，我们就有</p>
 <blockquote>
-<p>定理1（拉格朗日定理）：对于群 <span
-class="math inline">\(H&lt;G\)</span>，有</p>
-<p><span class="math display">\[
-|G|=[G:H]|H| \tag4
-\]</span></p>
+<p>定理1（拉格朗日定理）：对于群 $H&lt;G$，有</p>
+<p>$$<br>
+|G|=[G:H]|H| \tag4<br>
+$$</p>
 </blockquote>
-<p><em>证明：<span class="math inline">\(|G|=|\cup_{a \in I}aH|=\sum_{a
-\in I}|aH|=\sum_{a \in I}|H|=[G:H]|H|\)</span>，其中 <span
-class="math inline">\(I\)</span>
-为陪集不交的元素集合，它的大小就是指数.</em></p>
+<p><em>证明：$|G|=|\cup_{a \in I}aH|=\sum_{a \in I}|aH|=\sum_{a \in I}|H|=[G:H]|H|$，其中 $I$ 为陪集不交的元素集合，它的大小就是指数.</em></p>
 <p>这就有了子群的阶整除群的阶的推论，这一点是显而易见的.</p>
 <p>我们考察何时两个陪集会相等，有如下引理</p>
 <blockquote>
-<p>引理2：对于 <span class="math inline">\(G&lt;H\)</span>，陪集 <span
-class="math inline">\(aH=bH\)</span> 的充要条件是 <span
-class="math inline">\(b^{-1}a \in H\)</span>.</p>
+<p>引理2：对于 $G&lt;H$，陪集 $aH=bH$ 的充要条件是 $b^{-1}a \in H$.</p>
 </blockquote>
-<p><em>证明：考虑等价转换，只需证陪集 <span
-class="math inline">\(aH=H\)</span> 的充要条件是 <span
-class="math inline">\(a \in H\)</span>.</em></p>
-<p><em>必要性：根据群的封闭性立得 <span class="math inline">\(aH \subset
-H\)</span>.同理有 <span class="math inline">\(a^{-1}H \subset
-H\)</span>.立得结论.</em></p>
-<p><em>充分性： <span class="math inline">\(a=ae \in
-aH\)</span>.</em></p>
+<p><em>证明：考虑等价转换，只需证陪集 $aH=H$ 的充要条件是 $a \in H$.</em></p>
+<p><em>必要性：根据群的封闭性立得 $aH \subset H$.同理有 $a^{-1}H \subset H$.立得结论.</em></p>
+<p><em>充分性： $a=ae \in aH$.</em></p>
 <p>根据上面的定理，我们有关于子群的重要定理</p>
 <blockquote>
-<p>定理2：对于群 <span class="math inline">\(K&lt;G&lt;H\)</span> 有</p>
-<p><span class="math display">\[
-[H:K]=[G:K][H:G] \tag5
-\]</span></p>
+<p>定理2：对于群 $K&lt;G&lt;H$ 有</p>
+<p>$$<br>
+[H:K]=[G:K][H:G] \tag5<br>
+$$</p>
 </blockquote>
-<p><em>证明：根据 <span
-class="math inline">\((4)\)</span>，这是显然的.</em></p>
-<p>我们考察两个群 <span class="math inline">\(H,K\)</span>
-的元素互相乘积所构成的集合</p>
-<p><span class="math display">\[
-HK=\{hk:h\in H,k\in K\}
-\]</span></p>
+<p><em>证明：根据 $(4)$，这是显然的.</em></p>
+<p>我们考察两个群 $H,K$ 的元素互相乘积所构成的集合</p>
+<p>$$<br>
+HK={hk:h\in H,k\in K}<br>
+$$</p>
 <p>一般地，群的乘积不是一个群.关于群的乘积是否是群有如下命题</p>
 <blockquote>
-<p>命题2：群的乘积是群当且仅当 <span
-class="math inline">\(HK=KH\)</span>.</p>
+<p>命题2：群的乘积是群当且仅当 $HK=KH$.</p>
 </blockquote>
 <p><em>证明：</em></p>
-<p><em>充分性：设 <span
-class="math inline">\(h_1k_1h_2k_2=e\)</span>，显然有 <span
-class="math inline">\(h_2k_2=k_1^{-1}h_1^{-1} \in
-KH\)</span>，根据对称性立得.</em></p>
+<p><em>充分性：设 $h_1k_1h_2k_2=e$，显然有 $h_2k_2=k_1^{-1}h_1^{-1} \in KH$，根据对称性立得.</em></p>
 <p><em>必要性：与群的定义一一对照立得.</em></p>
 <p>我们考察乘积的大小，有如下定理</p>
 <blockquote>
-<p>定理3：对于群 <span class="math inline">\(K,H&lt;G\)</span>，有</p>
-<p><span class="math display">\[
-|HK|=\frac{|H||K|}{|H\cap K|} \tag6
-\]</span></p>
+<p>定理3：对于群 $K,H&lt;G$，有</p>
+<p>$$<br>
+|HK|=\frac{|H||K|}{|H\cap K|} \tag6<br>
+$$</p>
 </blockquote>
 <p><em>证明：微调至</em></p>
-<p><span class="math display">\[
-\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|} \tag{6&#39;}
-\]</span></p>
-<p><em>等号右端可依照陪集分割 <span class="math inline">\(H\)</span>
-构成一个指标集 <span class="math inline">\(I\)</span>
-，使得其中元素陪集不交并为 <span
-class="math inline">\(H\)</span>.</em></p>
-<p><span class="math display">\[
-H=\cup_{h\in I}h(H \cap K)\tag7
-\]</span></p>
+<p>$$<br>
+\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|} \tag{6’}<br>
+$$</p>
+<p><em>等号右端可依照陪集分割 $H$ 构成一个指标集 $I$ ，使得其中元素陪集不交并为 $H$.</em></p>
+<p>$$<br>
+H=\bigsqcup_{h\in I}h(H \cap K)\tag7<br>
+$$</p>
 <p><em>等式左端同样可以写成类似形式：</em></p>
-<p><span class="math display">\[
-HK=\cup_{h\in I&#39;} hK\tag8
-\]</span></p>
-<p><em>注意，此时不需要关心 <span class="math inline">\(HK\)</span>
-是否构成一个群.我们考虑证明 <span
-class="math inline">\(|I|=|I&#39;|\)</span>.尝试构造映射</em></p>
-<p><span class="math display">\[
-f:h(K)\to h(H \cap K)\tag9
-\]</span></p>
-<p><em>只需证对任意 <span class="math inline">\(xK,yK：x,y\in H\)</span>
-有 <span class="math inline">\(xK=yK \iff f(xK)=f(yK)\)</span>.</em></p>
-<p><em>设 <span class="math inline">\(xK=yK\)</span>，根据引理2，我们有
-<span class="math inline">\(y^{-1}x \in K\)</span>，因此有 <span
-class="math inline">\(y^{-1}x \in H \cap
-K\)</span>.再次根据引理2即可得证.</em></p>
-<hr />
+<p>$$<br>
+HK=\bigsqcup_{h\in I’} hK\tag8<br>
+$$</p>
+<p><em>注意，此时不需要关心 $HK$ 是否构成一个群.我们考虑证明 $|I|=|I’|$.尝试构造映射</em></p>
+<p>$$<br>
+f:h(K)\to h(H \cap K)\tag9<br>
+$$</p>
+<p><em>只需证对任意 $xK,yK：x,y\in H$ 有 $xK=yK \iff f(xK)=f(yK)$.</em></p>
+<p><em>设 $xK=yK$，根据引理2，我们有 $y^{-1}x \in K$，因此有 $y^{-1}x \in H \cap K$.再次根据引理2即可得证.</em></p>
+<hr>
 <h2 id="正规子群和商群">正规子群和商群</h2>
 <p>本节的最终目标是为陪集赋予群的结构.</p>
 <p>首先定义左（右）陪集的乘法</p>
-<p><span class="math display">\[
-(aH)(bH)=(abH) \tag{10}
-\]</span></p>
-<p>考察这个定义是否是良定义的，就需要有 <span
-class="math inline">\(a&#39;H=aH,b&#39;H=bH\)</span> 推出 <span
-class="math inline">\(a&#39;b&#39;H=abH\)</span>
-.一般而言这个条件是不成立的，我们需要额外添加条件以达成目的.下面给出正规子群</p>
+<p>$$<br>
+(aH)(bH)=(abH) \tag{10}<br>
+$$</p>
+<p>考察这个定义是否是良定义的，就需要有 $a’H=aH,b’H=bH$ 推出 $a’b’H=abH$ .一般而言这个条件是不成立的，我们需要额外添加条件以达成目的.下面给出正规子群</p>
 <blockquote>
-<p>定义3：若 <span class="math inline">\(N&lt;G\)</span>，<span
-class="math inline">\(\forall a\in G\)</span></p>
-<p><span class="math display">\[
-aN=Na \tag{11}
-\]</span></p>
-<p>称 <span class="math inline">\(N\)</span> 是 <span
-class="math inline">\(G\)</span> 的正规子群，记作</p>
-<p><span class="math display">\[
-N \lhd G
-\]</span></p>
+<p>定义3：若 $N&lt;G$，$\forall a\in G$</p>
+<p>$$<br>
+aN=Na \tag{11}<br>
+$$</p>
+<p>称 $N$ 是 $G$ 的正规子群，记作</p>
+<p>$$<br>
+N \lhd G<br>
+$$</p>
 </blockquote>
 <p>下面我们会看到正规子群的性质是非常良好的.它为陪集的乘法赋予了良定义.</p>
 <blockquote>
-<p>论断2：对于 <span class="math inline">\(G\)</span> 的正规子群 <span
-class="math inline">\(N\)</span>，形如 <span
-class="math inline">\((10)\)</span> 的定义是良定义的.</p>
+<p>论断2：对于 $G$ 的正规子群 $N$，形如 $(10)$ 的定义是良定义的.</p>
 </blockquote>
-<p><em>证明：这里直接将 <span class="math inline">\((10)\)</span>
-看作群的乘法，有 <span
-class="math inline">\(aNbN=abNN=abN\)</span>，其中最后一步可以根据封闭性和单位元分别推出左包含和右包含.这就由
-<span class="math inline">\(G\)</span> 的乘法的良定义推出了 <span
-class="math inline">\((10)\)</span> 的良定义.</em></p>
+<p><em>证明：这里直接将 $(10)$ 看作群的乘法，有 $aNbN=abNN=abN$，其中最后一步可以根据封闭性和单位元分别推出左包含和右包含.这就由 $G$ 的乘法的良定义推出了 $(10)$ 的良定义.</em></p>
 <p>这样，我们就可以构造出陪集的群：商群</p>
 <blockquote>
-<p>定理4：设 <span class="math inline">\(N \lhd G\)</span>，则 <span
-class="math inline">\(G/N\)</span> 在由 <span
-class="math inline">\((10)\)</span> 定义的乘法下构成群 <span
-class="math inline">\((G/N,\times)\)</span>，我们称为商群.</p>
+<p>定理4：设 $N \lhd G$，则 $G/N$ 在由 $(10)$ 定义的乘法下构成群 $(G/N,\times)$，我们称为商群.</p>
 </blockquote>
 <p><em>证明：我们一一验证</em></p>
-<p><em>单位元：<span class="math inline">\(N\)</span> 是单位元，显然由
-<span class="math inline">\(\forall a \in
-G,(aN)(eN)=aN\)</span>.反向同理.</em></p>
-<p><em>逆元：<span class="math inline">\(\forall a\in
-G,(aN)(a^{-1}N)=(aa^{-1})N=N\)</span></em></p>
+<p><em>单位元：$N$ 是单位元，显然由 $\forall a \in G,(aN)(eN)=aN$.反向同理.</em></p>
+<p><em>逆元：$\forall a\in G,(aN)(a^{-1}N)=(aa^{-1})N=N$</em></p>
 <p><em>封闭性：根据陪集的分拆性质即得.</em></p>
-<p><em>结合律：不难由 <span class="math inline">\(G\)</span>
-的结合律推出.</em></p>
+<p><em>结合律：不难由 $G$ 的结合律推出.</em></p>
 <p>为了更好地判别正规子群，我们给出如下引理</p>
 <blockquote>
 <p>引理3：以下论断等价</p>
-<p><span class="math display">\[
-H \lhd G
-\]</span></p>
-<p><span class="math display">\[
-\forall a\in G,aNa^{-1}\subset N \tag{12}
-\]</span></p>
-<p><span class="math display">\[
-\forall a\in G,\forall n \in N,ana^{-1} \in N \tag{13}
-\]</span></p>
+<p>$$<br>
+H \lhd G<br>
+$$</p>
+<p>$$<br>
+\forall a\in G,aNa^{-1}\subset N \tag{12}<br>
+$$</p>
+<p>$$<br>
+\forall a\in G,\forall n \in N,ana^{-1} \in N \tag{13}<br>
+$$</p>
 </blockquote>
-<p><em>证明：<span class="math inline">\((12)\)</span> 与 <span
-class="math inline">\((13)\)</span> 等价在集合上是显然的，现在只证 <span
-class="math inline">\((12)\)</span> 和 <span
-class="math inline">\((11)\)</span> 等价.</em></p>
-<p><em>充分性：根据定义立得 <span class="math inline">\(aNa^{-1}=N
-\subset N\)</span>.</em></p>
-<p><em>必要性：根据定义立得 <span class="math inline">\(aN \sub
-Na^{-1}\)</span>，<span class="math inline">\((12)\)</span> 中将 <span
-class="math inline">\(a\)</span> 替换为 <span
-class="math inline">\(a^{-1}\)</span> 立得 <span
-class="math inline">\(a^{-1}N(a^{-1})^{-1}=a^{-1}Na\subset
-N\)</span>，那么结论就是显然的了.</em></p>
-<p>一般而言， <span class="math inline">\((12),(13)\)</span>
-在实践中能更好地利用正规子群的性质.</p>
+<p><em>证明：$(12)$ 与 $(13)$ 等价在集合上是显然的，现在只证 $(12)$ 和 $(11)$ 等价.</em></p>
+<p><em>充分性：根据定义立得 $aNa^{-1}=N \subset N$.</em></p>
+<p><em>必要性：根据定义立得 $aN \sub Na^{-1}$，$(12)$ 中将 $a$ 替换为 $a^{-1}$ 立得 $a^{-1}N(a^{-1})^{-1}=a^{-1}Na\subset N$，那么结论就是显然的了.</em></p>
+<p>一般而言， $(12),(13)$ 在实践中能更好地利用正规子群的性质.</p>
 <p>利用上面的铺垫，我们有几个简单的论断</p>
 <blockquote>
 <p>论断3：任意个正规子群的交还是正规子群.</p>
 </blockquote>
-<p><em>利用 <span class="math inline">\((13)\)</span>
-就能简洁地证明，这里略去证明.</em></p>
+<p><em>利用 $(13)$ 就能简洁地证明，这里略去证明.</em></p>
 <blockquote>
-<p>论断4：对于群 <span class="math inline">\(G\)</span>，有 <span
-class="math inline">\(\{e\} \lhd G,G \lhd G\)</span>.</p>
+<p>论断4：对于群 $G$，有 ${e} \lhd G,G \lhd G$.</p>
 </blockquote>
 <blockquote>
 <p>论断5：交换群的子群都是正规子群.</p>
@@ -1586,54 +1515,204 @@ class="math inline">\(\{e\} \lhd G,G \lhd G\)</span>.</p>
   <entry>
     <title>点集拓扑：拓扑空间</title>
     <url>/2024/07/10/page-4/</url>
-    <content><![CDATA[<h1>拓扑空间</h1>
-<h2 id="通常拓扑">通常拓扑</h2>
-<p>为了研究 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">\textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> 上的通常拓扑，我们先研究开区间和闭区间.</p>
-<p>我们已经熟知，开区间是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>:</mo><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>:</mo><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">U:=\{x:a&lt;x&lt;b\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">}</span></span></span></span> ，闭区间是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>:</mo><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>:</mo><mi>a</mi><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>b</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">V:=\{x:a\leq x \leq b\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">}</span></span></span></span>.其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">a,b \in \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> ，也可以取到无穷.下面给出一个与分析中邻域概念雷同的，且在拓扑中常用的定义</p>
+    <content><![CDATA[<h1 id="拓扑空间">拓扑空间</h1>
+<h2 id="r-上的通常拓扑">$ R $ 上的通常拓扑</h2>
+<p>为了研究 $ R $ 上的通常拓扑，我们先研究开区间和闭区间.</p>
+<p>我们已经熟知，开区间是 <span
+class="math inline">\(U:=\{x:a&lt;x&lt;b\}\)</span> ，闭区间是 <span
+class="math inline">\(V:=\{x:a\leq x \leq b\}\)</span>.其中 $a,b R $
+，也可以取到无穷.下面给出一个与分析中邻域概念雷同的，且在拓扑中常用的定义</p>
 <blockquote>
-<p>定义1：若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext><mo separator="true">,</mo><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\in \textbf R,\epsilon &gt; 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8805499999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord textbf">R</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，则以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 为圆心，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span> 为半径的开球为</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mo stretchy="false">{</mo><mi>y</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext><mo>:</mo><mi mathvariant="normal">∣</mi><mi>y</mi><mo>−</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>ϵ</mi><mo stretchy="false">}</mo></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(1)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">B(x,\epsilon):=\{y\in\textbf R:|y-x|&lt;\epsilon\} \tag1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">}</span></span><span class="tag"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">1</span></span><span class="mord">)</span></span></span></span></span></span></p>
+<p>定义1：若 <span class="math inline">\(x\in \mathbb R ,\epsilon &gt;
+0\)</span>，则以 <span class="math inline">\(x\)</span> 为圆心，<span
+class="math inline">\(\epsilon\)</span> 为半径的开球为</p>
+<p><span class="math display">\[
+B(x,\epsilon):=\{y\in \mathbb R :|y-x|&lt;\epsilon\} \tag1
+\]</span></p>
 </blockquote>
 <p>开球与邻域是相同的.</p>
 <p>接下来考察开区间的性质</p>
 <blockquote>
-<p>命题1： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 为一个开区间和以下论述等价： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mi>U</mi><mo separator="true">,</mo><mi mathvariant="normal">∃</mi><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\forall x \in U,\exist\epsilon&gt;0,B(x,\epsilon)\sub U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∃</span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span>.</p>
+<p>论断1： <span class="math inline">\(U\)</span>
+为一个开区间和以下论述等价： <span class="math inline">\(\forall x \in
+U,\exists\epsilon&gt;0,B(x,\epsilon)\subset U\)</span>.</p>
 </blockquote>
-<p><em>证明：充分性：不失一般性，假设开区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>:</mo><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">U:=(a,b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span> 两端都是实数，对于任给的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 只需取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mi>min</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>b</mi><mo>−</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\epsilon=\min(|a-x|,|b-x|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∣</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span> 即可满足论述.</em></p>
+<p><strong><em>证明：</em></strong></p>
+<p><em>充分性：不失一般性，假设开区间 <span
+class="math inline">\(U:=(a,b)\)</span> 两端都是实数，对于任给的 <span
+class="math inline">\(x\)</span> 只需取 <span
+class="math inline">\(\epsilon=\min(|a-x|,|b-x|)\)</span>
+即可满足论述.</em></p>
 <p><em>必要性：显然.</em></p>
 <p><em>两端存在无穷的情况考虑无穷的极大性即可得证.</em></p>
 <p>接下来，我们从开区间中抽象出开集的概念</p>
 <blockquote>
-<p>定义2：若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">U\sub \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span>，则称 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">\textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> 上的开集，当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 满足 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mi>U</mi><mo separator="true">,</mo><mi mathvariant="normal">∃</mi><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\forall x \in U,\exist\epsilon&gt;0,B(x,\epsilon)\sub U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∃</span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 时.</p>
+<p>定义2：若 $UR $，则称 <span class="math inline">\(U\)</span> 是 $ R $
+上的开集，当 <span class="math inline">\(U\)</span> 满足 <span
+class="math inline">\(\forall x \in
+U,\exists\epsilon&gt;0,B(x,\epsilon)\subset U\)</span> 时.</p>
 </blockquote>
 <p>注意，开区间是开集的真子集，例如不交开区间的并就不是开区间，但它是开集.</p>
 <p>为了引出闭集的概念，我们先引入与分析中极限雷同的极限点概念</p>
 <blockquote>
-<p>定义3：若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">A\sub \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span>，称 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">x\in \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 的一个极限点，当存在数列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">}</mo><mo>⊂</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\{a_n\} \sub A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo><mi>lim</mi><mo>⁡</mo></mo><mi mathvariant="normal">∞</mi></msub><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\lim_{\infty}a_n=x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mop"><span class="mop">lim</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>.</p>
+<p>定义3：若 $AR $，称 $xR $ 为 <span class="math inline">\(A\)</span>
+的一个极限点，当存在数列 <span class="math inline">\(\{a_n\} \subset
+A\)</span>，<span class="math inline">\(\lim_{\infty}a_n=x\)</span>.</p>
 </blockquote>
 <blockquote>
-<p>引理1：若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">A\sub \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span>，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">x\in \textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 的一个极限点当且仅当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="normal">∃</mi><mi>a</mi><mo>∈</mo><mi>A</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\forall \epsilon&gt;0,\exist a\in A,|a-x|&lt;\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∃</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>.</p>
+<p>引理1：若 $AR $，则 $xR $ 为 <span class="math inline">\(A\)</span>
+的一个极限点当且仅当 <span class="math inline">\(\forall
+\epsilon&gt;0,\exists a\in A,|a-x|&lt;\epsilon\)</span>.</p>
 </blockquote>
 <p>这是分析中已经熟知的.</p>
 <p>下面，我们引出闭区间的重要性质</p>
 <blockquote>
-<p>命题2：闭区间包含所有的极限点.</p>
+<p>论断2：闭区间包含所有的极限点.</p>
 </blockquote>
-<p><em>证明：我们假设存在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo mathvariant="normal">∉</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x \notin U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mord"><span class="mrel">∈</span></span><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.75em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="llap"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="inner"><span class="mord"><span class="mord">/</span><span class="mspace" style="margin-right:0.05555555555555555em;"></span></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.25em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 是闭区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>:</mo><mo>=</mo><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">U := [a,b]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">]</span></span></span></span> 的极限点。考虑对于右端点，存在数列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">}</mo><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\{a_n\} \sub U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo><mi>lim</mi><mo>⁡</mo></mo><mi mathvariant="normal">∞</mi></msub><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\lim_{\infty}a_n=x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mop"><span class="mop">lim</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，但是我们只要取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span> 为一个比 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 的距离小的数，就必然有一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>∈</mo><mo stretchy="false">[</mo><mi>k</mi><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a_i \in [k,x]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">]</span></span></span></span>，这里 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">k&gt;b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\epsilon=x-k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>.这就引出了矛盾.左端点的证明是类似的.</em></p>
+<p><strong><em>证明：</em></strong></p>
+<p><em>我们假设存在 <span class="math inline">\(x \notin U\)</span>
+是闭区间 <span class="math inline">\(U := [a,b]\)</span>
+的极限点。考虑对于右端点，存在数列 <span class="math inline">\(\{a_n\}
+\subset U\)</span>，<span
+class="math inline">\(\lim_{\infty}a_n=x\)</span>，但是我们只要取 <span
+class="math inline">\(\epsilon\)</span> 为一个比 <span
+class="math inline">\(x\)</span> 和 <span
+class="math inline">\(b\)</span> 的距离小的数，就必然有一个 <span
+class="math inline">\(a_i \in [k,x]\)</span>，这里 <span
+class="math inline">\(k&gt;b\)</span>，<span
+class="math inline">\(\epsilon=x-k\)</span>.这就引出了矛盾.左端点的证明是类似的.</em></p>
 <p>我们根据这条性质抽象出闭集的概念</p>
 <blockquote>
-<p>定义4：若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">V\in\textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span>，我们称 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 为闭集当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 包含它的所有极限点.</p>
+<p>定义4：若 $VR $，我们称 <span class="math inline">\(V\)</span>
+为闭集当 <span class="math inline">\(V\)</span> 包含它的所有极限点.</p>
 </blockquote>
 <p>类似地，闭区间是闭集的真子集.</p>
 <p>下面我们证明本节的最重要的成果</p>
 <blockquote>
-<p>定理1：设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mtext mathvariant="bold">R</mtext></mrow><annotation encoding="application/x-tex">U\in\textbf R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord text"><span class="mord textbf">R</span></span></span></span></span> 为闭集，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="bold">R</mtext><mo>−</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\textbf R - U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord textbf">R</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 为开集.反之亦然.</p>
+<p>定理1：设 $UR $ 为闭集，则 $ R - U$ 为开集.反之亦然.</p>
 </blockquote>
 <p>在证明前，我们必须明确一个概念：集合不一定有开、闭的性质，也就是说非开不一定是闭集，非闭不一定是开集.左开右闭区间就是显而易见的例子.</p>
-<p><em>证明：我们先设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 为开集，需证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mtext mathvariant="bold">R</mtext><mo>−</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">V=\textbf R - U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord textbf">R</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 为闭集.用反证法，假设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 不是闭集，那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 不包含它的所有极限点，设该极限点为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span>，考虑数列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">}</mo><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">\{a_n\}\in V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>的极限，根据开集的定义，存在一个以该点为圆心的开球完全被 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 包含，因此该开球的半径外的数列各值不能以比半径更小的距离 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span> 逼近该极限点，也就是说必须存在一个或以上的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 在该开球中，这与假设矛盾.</em></p>
-<p><em>另一方面，我们设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 为闭集，需证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mtext mathvariant="bold">R</mtext><mo>−</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">U= \textbf R - V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76944em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord textbf">R</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 为开集，用反证法，假设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 不是开集，则存在一个点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，它的任意小的开球 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>ϵ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B(x,\epsilon)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">)</span></span></span></span> 不完全被 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span> 包含.我们设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mo>∩</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">y \in B(x,\epsilon) \cap U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">ϵ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span>，那么我们构造一个数列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">}</mo><mo>⊂</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">\{a_n\}\sub V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>，只要取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span> 为足够小的值，在这里不失一般性取为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，让每一项满足  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>∈</mo><mi>B</mi><mo stretchy="false">(</mo><mi>y</mi><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo stretchy="false">)</mo><mo>∩</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">a_n\in B(y,1/n) \cap V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>，这样 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">a_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 就能以任意大小逼近 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>，那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 的一个极限点，必然是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span> 的元素，这与假设矛盾.</em></p>
+<p><strong><em>证明：</em></strong></p>
+<p><em>我们先设 <span class="math inline">\(U\)</span> 为开集，需证
+<span class="math inline">\(V= \mathbb R - U\)</span>
+为闭集.用反证法，假设 <span class="math inline">\(V\)</span>
+不是闭集，那么 <span class="math inline">\(V\)</span>
+不包含它的所有极限点，设该极限点为 <span class="math inline">\(x\in
+U\)</span>，考虑数列 <span class="math inline">\(\{a_n\}\in
+V\)</span>的极限，根据开集的定义，存在一个以该点为圆心的开球完全被 <span
+class="math inline">\(U\)</span>
+包含，因此该开球的半径外的数列各值不能以比半径更小的距离 <span
+class="math inline">\(\epsilon\)</span>
+逼近该极限点，也就是说必须存在一个或以上的 <span
+class="math inline">\(a_i\)</span> 在该开球中，这与假设矛盾.</em></p>
+<p><em>另一方面，我们设 <span class="math inline">\(V\)</span>
+为闭集，需证 <span class="math inline">\(U= \mathbb R - V\)</span>
+为开集，用反证法，假设 <span class="math inline">\(U\)</span>
+不是开集，则存在一个点 <span
+class="math inline">\(x\)</span>，它的任意小的开球 <span
+class="math inline">\(B(x,\epsilon)\)</span> 不完全被 <span
+class="math inline">\(U\)</span> 包含.我们设 <span
+class="math inline">\(y \in B(x,\epsilon) \cap
+U\)</span>，那么我们构造一个数列 <span
+class="math inline">\(\{a_n\}\subset V\)</span>，只要取 <span
+class="math inline">\(\epsilon\)</span>
+为足够小的值，在这里不失一般性取为 <span
+class="math inline">\(\frac{1}{n}\)</span>，让每一项满足 <span
+class="math inline">\(a_n\in B(y,1/n) \cap V\)</span>，这样 <span
+class="math inline">\(a_n\)</span> 就能以任意大小逼近 <span
+class="math inline">\(y\)</span>，那么 <span
+class="math inline">\(y\)</span> 就是 <span
+class="math inline">\(V\)</span> 的一个极限点，必然是 <span
+class="math inline">\(V\)</span> 的元素，这与假设矛盾.</em></p>
 <p>这条定理说明开集和闭集是互补的，开集的补集是闭集.</p>
+<hr />
+<p>现在我们来研究开集和闭集的性质.</p>
+<blockquote>
+<p>定理2（开集的性质）：</p>
+<ol type="1">
+<li>空集和 $ R $ 是开集.</li>
+<li>任意开集的并是开集.</li>
+<li>有限开集的交是开集.</li>
+</ol>
+</blockquote>
+<p><strong><em>证明：</em></strong></p>
+<p><em>性质1是显然的.</em></p>
+<p><em>对于性质2，我们设并集为 <span
+class="math inline">\(U_0\)</span>，考虑任意元素 <span
+class="math inline">\(x\in U_0\)</span>，它至少属于一个开集 <span
+class="math inline">\(U\)</span>，即有对任意开球 <span
+class="math inline">\(B(x,\epsilon)\)</span>，都有 <span
+class="math inline">\(B(x,\epsilon)\in U \subset U_0\)</span>.</em></p>
+<p><em>对于性质3，设大小为 <span class="math inline">\(n\)</span>
+的开集族 <span class="math inline">\({U_i}\)</span> 的交集为 <span
+class="math inline">\(U_0\)</span>，对任意 <span
+class="math inline">\(x\in U_0\)</span>，取 <span
+class="math inline">\(\epsilon = \min_{i \in
+I}(\epsilon_i:B(x,\epsilon_i) \subset U_i)\)</span>，就有 <span
+class="math inline">\(\forall i \in [1,n],B(x,\epsilon)\subset
+B(x,\epsilon_i)\subset U_i\)</span>，这就完成了证明.</em></p>
+<p>注意性质3必须要是有限个开集的交.因为确界原理：无限个数的最小值无法确定.</p>
+<p>例如：区间套</p>
+<p><span class="math display">\[
+U_i=(\frac1i,\frac{1}{i+1})
+\]</span></p>
+<p>根据区间套原理，这个开集族交集是 <span
+class="math inline">\(\{0\}\)</span>，显然不是开集.</p>
+<p>根据对偶性，不难得出以下闭集的性质</p>
+<blockquote>
+<p>定理3：</p>
+<ol type="1">
+<li>空集和 $ R $ 是闭集.</li>
+<li>有限闭集的并是闭集.</li>
+<li>任意闭集的交是开集.</li>
+</ol>
+</blockquote>
+<p><strong><em>证明：</em></strong></p>
+<p><em>性质1是显然的.</em></p>
+<p><em>对于性质2，考虑定理2的性质3，有限闭集的并就是它们补集的交的补集.</em></p>
+<p><em>性质3同理.</em></p>
+<p>为了熟悉拓扑的语言，我们引入闭包</p>
+<blockquote>
+<p>定义5： <span class="math inline">\(A\)</span> 的闭包是一个包含 <span
+class="math inline">\(A\)</span> 的所有极限点（闭包点）的集合，记作
+<span class="math inline">\(\overline A = cl(A)\)</span>.</p>
+</blockquote>
+<p>很自然地我们想替换闭集的语言</p>
+<blockquote>
+<p>引理2：<span class="math inline">\(V\)</span> 是 $ R $
+的闭子集当且仅当 <span class="math inline">\(V= \overline
+V\)</span>.</p>
+</blockquote>
+<p>不证.</p>
+<p>接下来我们就可以刻画 <span class="math inline">\(R\)</span>
+上的通常拓扑形态</p>
+<blockquote>
+<p>定义6：设 <span class="math inline">\(A \subset \mathbb
+R\)</span>，我们有</p>
+<ol type="1">
+<li><span class="math inline">\(A\)</span> 的内部</li>
+</ol>
+<p><span class="math display">\[
+\operatorname{Int}(A)  = \{x \in  \mathbb R :\exists \epsilon
+&gt;0,B(x,\epsilon) \subset A \}=\{x \in  \mathbb R :\exists \epsilon
+&gt;0,B(x,\epsilon) \cap  \mathbb R -A =\empty \} \tag2
+\]</span></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(A\)</span> 的外部</li>
+</ol>
+<p><span class="math display">\[
+\operatorname{Ext}(A)=\{x \in  \mathbb R :\exists \epsilon
+&gt;0,B(x,\epsilon) \subset  \mathbb R -A \}=\{x \in  \mathbb R :\exists
+\epsilon &gt;0,B(x,\epsilon) \cap  A =\empty \} \tag3
+\]</span></p>
+<ol start="3" type="1">
+<li><span class="math inline">\(A\)</span> 的边界</li>
+</ol>
+<p><span class="math display">\[
+\partial A = \mathbb R-\operatorname{Int}(A)-\operatorname{Ext}(A) \tag4
+\]</span></p>
+</blockquote>
+<p>这样我们就能刻画一个拓扑的内、外、边界了.下一节将讨论边界的性质.</p>
 ]]></content>
       <categories>
         <category>点集拓扑</category>
