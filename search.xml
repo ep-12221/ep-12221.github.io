@@ -1342,167 +1342,379 @@ class="math inline">\(\ \ \ \square\)</span></p>
       </tags>
   </entry>
   <entry>
-    <title>有限群</title>
+    <title>群论</title>
     <url>/2024/07/09/%E6%8A%BD%E4%BB%A3%EF%BC%9A%E7%BE%A4%E8%AE%BA/</url>
-    <content><![CDATA[<h1>群论补足1：有限群</h1>
+    <content><![CDATA[<h1 id="群论基础补足">群论基础补足</h1>
 <h2 id="群的陪集和分拆">群的陪集和分拆</h2>
 <blockquote>
-<p>定义1：设群 $H&lt;G$，对任意 $a \in G$ ，称</p>
-<p>$$<br>
-aH={ax:x\in H} \tag1<br>
-$$</p>
-<p>为 $G$ 关于 $H$ 的左（右）陪集.</p>
+<p>定义1：设群 <span class="math inline">\(H&lt;G\)</span>，对任意 <span
+class="math inline">\(a \in G\)</span> ，称</p>
+<p><span class="math display">\[
+aH=\{ax:x\in H\} \tag1
+\]</span></p>
+<p>为 <span class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的左（右）陪集.</p>
 </blockquote>
 <p>可以证明陪集构成群的一个分拆.先引入如下引理</p>
 <blockquote>
 <p>引理1：设映射</p>
-<p>$$<br>
-f:H\to aH  \  x \to ax<br>
-$$</p>
+<p><span class="math display">\[
+f:H\to aH  \\  x \to ax
+\]</span></p>
 <p>该映射为满射.</p>
 </blockquote>
-<p><em>证明：只需证对任意 $x,y \in H$ 有 $x=y \iff f(x)=f(y)$.充分性显然.必要性根据群的消去律也是显然的.</em></p>
+<p><em>证明：</em></p>
+<p><em>只需证对任意 <span class="math inline">\(x,y \in H\)</span> 有
+<span class="math inline">\(x=y \iff
+f(x)=f(y)\)</span>.充分性显然.必要性根据群的消去律也是显然的.</em></p>
 <p>同时可以有如下论断</p>
 <blockquote>
-<p>论断1：对于群 $H&lt;G$ ，不同元素 $a,b$ 生成的陪集 $aH,bH$ 要么相等，要么不交。</p>
+<p>论断1：对于群 <span class="math inline">\(H&lt;G\)</span> ，不同元素
+<span class="math inline">\(a,b\)</span> 生成的陪集 <span
+class="math inline">\(aH,bH\)</span> 要么相等，要么不交。</p>
 </blockquote>
-<p><em>证明：假设 $aH \cap bH \neq \empty$， $ah_1 = bh_2 \in aH \cap bH$，由对称性只需证 $aH \subset bH$. 任取 $ah \in aH$，就有 $ah = (bh_2h_1^{-1})h=b(h_2h_1^{-1}h) \in bH$（利用假设）.这就完成了证明.</em></p>
+<p><em>证明：</em></p>
+<p><em>假设 <span class="math inline">\(aH \cap bH \neq
+\empty\)</span>， <span class="math inline">\(ah_1 = bh_2 \in aH \cap
+bH\)</span>，由对称性只需证 <span class="math inline">\(aH \subset
+bH\)</span>. 任取 <span class="math inline">\(ah \in aH\)</span>，就有
+<span class="math inline">\(ah = (bh_2h_1^{-1})h=b(h_2h_1^{-1}h) \in
+bH\)</span>（利用假设）.这就完成了证明.</em></p>
 <p>因此，陪集构成了群的一个分拆.下面由陪集引入商集的概念</p>
 <blockquote>
-<p>定义2：设群 $H&lt;G$ ，将 $G$ 关于 $H$ 的所有左陪集构成的集合</p>
-<p>$$<br>
-S:={aH:a\in G} \tag2<br>
-$$</p>
-<p>称作 $G$ 关于 $H$ 的商集，记作</p>
-<p>$$<br>
-G/H<br>
-$$</p>
-<p>同时称这个商集的大小为 $H$ 在 $G$ 中的指数，记作</p>
-<p>$$<br>
-[G:H]=|G/H| \tag3<br>
-$$</p>
+<p>定义2：设群 <span class="math inline">\(H&lt;G\)</span> ，将 <span
+class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的所有左陪集构成的集合</p>
+<p><span class="math display">\[
+S:=\{aH:a\in G\} \tag2
+\]</span></p>
+<p>称作 <span class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的商集，记作</p>
+<p><span class="math display">\[
+G/H
+\]</span></p>
+<p>同时称这个商集的大小为 <span class="math inline">\(H\)</span> 在
+<span class="math inline">\(G\)</span> 中的指数，记作</p>
+<p><span class="math display">\[
+[G:H]=|G/H| \tag3
+\]</span></p>
 </blockquote>
 <p>综合上述引理及命题，我们就有</p>
 <blockquote>
-<p>定理1（拉格朗日定理）：对于群 $H&lt;G$，有</p>
-<p>$$<br>
-|G|=[G:H]|H| \tag4<br>
-$$</p>
+<p>定理1（拉格朗日定理）：对于群 <span
+class="math inline">\(H&lt;G\)</span>，有</p>
+<p><span class="math display">\[
+|G|=[G:H]|H| \tag4
+\]</span></p>
 </blockquote>
-<p><em>证明：$|G|=|\cup_{a \in I}aH|=\sum_{a \in I}|aH|=\sum_{a \in I}|H|=[G:H]|H|$，其中 $I$ 为陪集不交的元素集合，它的大小就是指数.</em></p>
+<p><em>证明：</em></p>
+<p><em><span class="math inline">\(|G|=|\cup_{a \in I}aH|=\sum_{a \in
+I}|aH|=\sum_{a \in I}|H|=[G:H]|H|\)</span>，其中 <span
+class="math inline">\(I\)</span>
+为陪集不交的元素集合，它的大小就是指数.</em></p>
 <p>这就有了子群的阶整除群的阶的推论，这一点是显而易见的.</p>
 <p>我们考察何时两个陪集会相等，有如下引理</p>
 <blockquote>
-<p>引理2：对于 $G&lt;H$，陪集 $aH=bH$ 的充要条件是 $b^{-1}a \in H$.</p>
-</blockquote>
-<p><em>证明：考虑等价转换，只需证陪集 $aH=H$ 的充要条件是 $a \in H$.</em></p>
-<p><em>必要性：根据群的封闭性立得 $aH \subset H$.同理有 $a^{-1}H \subset H$.立得结论.</em></p>
-<p><em>充分性： $a=ae \in aH$.</em></p>
-<p>根据上面的定理，我们有关于子群的重要定理</p>
-<blockquote>
-<p>定理2：对于群 $K&lt;G&lt;H$ 有</p>
-<p>$$<br>
-[H:K]=[G:K][H:G] \tag5<br>
-$$</p>
-</blockquote>
-<p><em>证明：根据 $(4)$，这是显然的.</em></p>
-<p>我们考察两个群 $H,K$ 的元素互相乘积所构成的集合</p>
-<p>$$<br>
-HK={hk:h\in H,k\in K}<br>
-$$</p>
-<p>一般地，群的乘积不是一个群.关于群的乘积是否是群有如下命题</p>
-<blockquote>
-<p>命题2：群的乘积是群当且仅当 $HK=KH$.</p>
+<p>引理2：对于 <span class="math inline">\(G&lt;H\)</span>，陪集 <span
+class="math inline">\(aH=bH\)</span> 的充要条件是 <span
+class="math inline">\(b^{-1}a \in H\)</span>.</p>
 </blockquote>
 <p><em>证明：</em></p>
-<p><em>充分性：设 $h_1k_1h_2k_2=e$，显然有 $h_2k_2=k_1^{-1}h_1^{-1} \in KH$，根据对称性立得.</em></p>
+<p><em>考虑等价转换，只需证陪集 <span
+class="math inline">\(aH=H\)</span> 的充要条件是 <span
+class="math inline">\(a \in H\)</span>.</em></p>
+<p><em>必要性：根据群的封闭性立得 <span class="math inline">\(aH \subset
+H\)</span>.同理有 <span class="math inline">\(a^{-1}H \subset
+H\)</span>.立得结论.</em></p>
+<p><em>充分性： <span class="math inline">\(a=ae \in
+aH\)</span>.</em></p>
+<p>根据上面的定理，我们有关于子群的重要定理</p>
+<blockquote>
+<p>定理2：对于群 <span class="math inline">\(K&lt;G&lt;H\)</span> 有</p>
+<p><span class="math display">\[
+[H:K]=[G:K][H:G] \tag5
+\]</span></p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>根据 <span
+class="math inline">\((4)\)</span>，这是显然的.</em></p>
+<p>我们考察两个群 <span class="math inline">\(H,K\)</span>
+的元素互相乘积所构成的集合</p>
+<p><span class="math display">\[
+HK=\{hk:h\in H,k\in K\}
+\]</span></p>
+<p>一般地，群的乘积不是一个群.关于群的乘积是否是群有如下命题</p>
+<blockquote>
+<p>论断2：群的乘积是群当且仅当 <span
+class="math inline">\(HK=KH\)</span>.</p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>充分性：设 <span
+class="math inline">\(h_1k_1h_2k_2=e\)</span>，显然有 <span
+class="math inline">\(h_2k_2=k_1^{-1}h_1^{-1} \in
+KH\)</span>，根据对称性立得.</em></p>
 <p><em>必要性：与群的定义一一对照立得.</em></p>
 <p>我们考察乘积的大小，有如下定理</p>
 <blockquote>
-<p>定理3：对于群 $K,H&lt;G$，有</p>
-<p>$$<br>
-|HK|=\frac{|H||K|}{|H\cap K|} \tag6<br>
-$$</p>
+<p>定理3：对于群 <span class="math inline">\(K,H&lt;G\)</span>，有</p>
+<p><span class="math display">\[
+|HK|=\frac{|H||K|}{|H\cap K|} \tag6
+\]</span></p>
 </blockquote>
-<p><em>证明：微调至</em></p>
-<p>$$<br>
-\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|} \tag{6’}<br>
-$$</p>
-<p><em>等号右端可依照陪集分割 $H$ 构成一个指标集 $I$ ，使得其中元素陪集不交并为 $H$.</em></p>
-<p>$$<br>
-H=\bigsqcup_{h\in I}h(H \cap K)\tag7<br>
-$$</p>
+<p><em>证明：</em></p>
+<p><em>微调至</em></p>
+<p><span class="math display">\[
+\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|} \tag{6&#39;}
+\]</span></p>
+<p><em>等号右端可依照陪集分割 <span class="math inline">\(H\)</span>
+构成一个指标集 <span class="math inline">\(I\)</span>
+，使得其中元素陪集不交并为 <span
+class="math inline">\(H\)</span>.</em></p>
+<p><span class="math display">\[
+H=\bigsqcup_{h\in I}h(H \cap K)\tag7
+\]</span></p>
 <p><em>等式左端同样可以写成类似形式：</em></p>
-<p>$$<br>
-HK=\bigsqcup_{h\in I’} hK\tag8<br>
-$$</p>
-<p><em>注意，此时不需要关心 $HK$ 是否构成一个群.我们考虑证明 $|I|=|I’|$.尝试构造映射</em></p>
-<p>$$<br>
-f:h(K)\to h(H \cap K)\tag9<br>
-$$</p>
-<p><em>只需证对任意 $xK,yK：x,y\in H$ 有 $xK=yK \iff f(xK)=f(yK)$.</em></p>
-<p><em>设 $xK=yK$，根据引理2，我们有 $y^{-1}x \in K$，因此有 $y^{-1}x \in H \cap K$.再次根据引理2即可得证.</em></p>
-<hr>
+<p><span class="math display">\[
+HK=\bigsqcup_{h\in I&#39;} hK\tag8
+\]</span></p>
+<p><em>注意，此时不需要关心 <span class="math inline">\(HK\)</span>
+是否构成一个群.我们考虑证明 <span
+class="math inline">\(|I|=|I&#39;|\)</span>.尝试构造映射</em></p>
+<p><span class="math display">\[
+f:h(K)\to h(H \cap K)\tag9
+\]</span></p>
+<p><em>只需证对任意 <span class="math inline">\(xK,yK：x,y\in H\)</span>
+有 <span class="math inline">\(xK=yK \iff f(xK)=f(yK)\)</span>.</em></p>
+<p><em>设 <span class="math inline">\(xK=yK\)</span>，根据引理2，我们有
+<span class="math inline">\(y^{-1}x \in K\)</span>，因此有 <span
+class="math inline">\(y^{-1}x \in H \cap
+K\)</span>.再次根据引理2即可得证.</em></p>
+<hr />
 <h2 id="正规子群和商群">正规子群和商群</h2>
 <p>本节的最终目标是为陪集赋予群的结构.</p>
 <p>首先定义左（右）陪集的乘法</p>
-<p>$$<br>
-(aH)(bH)=(abH) \tag{10}<br>
-$$</p>
-<p>考察这个定义是否是良定义的，就需要有 $a’H=aH,b’H=bH$ 推出 $a’b’H=abH$ .一般而言这个条件是不成立的，我们需要额外添加条件以达成目的.下面给出正规子群</p>
+<p><span class="math display">\[
+(aH)(bH)=(abH) \tag{10}
+\]</span></p>
+<p>考察这个定义是否是良定义的，就需要有 <span
+class="math inline">\(a&#39;H=aH,b&#39;H=bH\)</span> 推出 <span
+class="math inline">\(a&#39;b&#39;H=abH\)</span>
+.一般而言这个条件是不成立的，我们需要额外添加条件以达成目的.下面给出正规子群</p>
 <blockquote>
-<p>定义3：若 $N&lt;G$，$\forall a\in G$</p>
-<p>$$<br>
-aN=Na \tag{11}<br>
-$$</p>
-<p>称 $N$ 是 $G$ 的正规子群，记作</p>
-<p>$$<br>
-N \lhd G<br>
-$$</p>
+<p>定义3：若 <span class="math inline">\(N&lt;G\)</span>，<span
+class="math inline">\(\forall a\in G\)</span></p>
+<p><span class="math display">\[
+aN=Na \tag{11}
+\]</span></p>
+<p>称 <span class="math inline">\(N\)</span> 是 <span
+class="math inline">\(G\)</span> 的正规子群，记作</p>
+<p><span class="math display">\[
+N \lhd G
+\]</span></p>
 </blockquote>
 <p>下面我们会看到正规子群的性质是非常良好的.它为陪集的乘法赋予了良定义.</p>
 <blockquote>
-<p>论断2：对于 $G$ 的正规子群 $N$，形如 $(10)$ 的定义是良定义的.</p>
+<p>论断2：对于 <span class="math inline">\(G\)</span> 的正规子群 <span
+class="math inline">\(N\)</span>，形如 <span
+class="math inline">\((10)\)</span> 的定义是良定义的.</p>
 </blockquote>
-<p><em>证明：这里直接将 $(10)$ 看作群的乘法，有 $aNbN=abNN=abN$，其中最后一步可以根据封闭性和单位元分别推出左包含和右包含.这就由 $G$ 的乘法的良定义推出了 $(10)$ 的良定义.</em></p>
+<p><em>证明：这里直接将 <span class="math inline">\((10)\)</span>
+看作群的乘法，有 <span
+class="math inline">\(aNbN=abNN=abN\)</span>，其中最后一步可以根据封闭性和单位元分别推出左包含和右包含.这就由
+<span class="math inline">\(G\)</span> 的乘法的良定义推出了 <span
+class="math inline">\((10)\)</span> 的良定义.</em></p>
 <p>这样，我们就可以构造出陪集的群：商群</p>
 <blockquote>
-<p>定理4：设 $N \lhd G$，则 $G/N$ 在由 $(10)$ 定义的乘法下构成群 $(G/N,\times)$，我们称为商群.</p>
+<p>定理4：设 <span class="math inline">\(N \lhd G\)</span>，则 <span
+class="math inline">\(G/N\)</span> 在由 <span
+class="math inline">\((10)\)</span> 定义的乘法下构成群 <span
+class="math inline">\((G/N,\times)\)</span>，我们称为商群.</p>
 </blockquote>
 <p><em>证明：我们一一验证</em></p>
-<p><em>单位元：$N$ 是单位元，显然由 $\forall a \in G,(aN)(eN)=aN$.反向同理.</em></p>
-<p><em>逆元：$\forall a\in G,(aN)(a^{-1}N)=(aa^{-1})N=N$</em></p>
+<p><em>单位元：<span class="math inline">\(N\)</span> 是单位元，显然由
+<span class="math inline">\(\forall a \in
+G,(aN)(eN)=aN\)</span>.反向同理.</em></p>
+<p><em>逆元：<span class="math inline">\(\forall a\in
+G,(aN)(a^{-1}N)=(aa^{-1})N=N\)</span></em></p>
 <p><em>封闭性：根据陪集的分拆性质即得.</em></p>
-<p><em>结合律：不难由 $G$ 的结合律推出.</em></p>
+<p><em>结合律：不难由 <span class="math inline">\(G\)</span>
+的结合律推出.</em></p>
 <p>为了更好地判别正规子群，我们给出如下引理</p>
 <blockquote>
 <p>引理3：以下论断等价</p>
-<p>$$<br>
-H \lhd G<br>
-$$</p>
-<p>$$<br>
-\forall a\in G,aNa^{-1}\subset N \tag{12}<br>
-$$</p>
-<p>$$<br>
-\forall a\in G,\forall n \in N,ana^{-1} \in N \tag{13}<br>
-$$</p>
+<p><span class="math display">\[
+H \lhd G
+\]</span></p>
+<p><span class="math display">\[
+\forall a\in G,aNa^{-1}\subset N \tag{12}
+\]</span></p>
+<p><span class="math display">\[
+\forall a\in G,\forall n \in N,ana^{-1} \in N \tag{13}
+\]</span></p>
 </blockquote>
-<p><em>证明：$(12)$ 与 $(13)$ 等价在集合上是显然的，现在只证 $(12)$ 和 $(11)$ 等价.</em></p>
-<p><em>充分性：根据定义立得 $aNa^{-1}=N \subset N$.</em></p>
-<p><em>必要性：根据定义立得 $aN \sub Na^{-1}$，$(12)$ 中将 $a$ 替换为 $a^{-1}$ 立得 $a^{-1}N(a^{-1})^{-1}=a^{-1}Na\subset N$，那么结论就是显然的了.</em></p>
-<p>一般而言， $(12),(13)$ 在实践中能更好地利用正规子群的性质.</p>
+<p><em>证明：<span class="math inline">\((12)\)</span> 与 <span
+class="math inline">\((13)\)</span> 等价在集合上是显然的，现在只证 <span
+class="math inline">\((12)\)</span> 和 <span
+class="math inline">\((11)\)</span> 等价.</em></p>
+<p><em>充分性：根据定义立得 <span class="math inline">\(aNa^{-1}=N
+\subset N\)</span>.</em></p>
+<p><em>必要性：根据定义立得 <span class="math inline">\(aN \sub
+Na^{-1}\)</span>，<span class="math inline">\((12)\)</span> 中将 <span
+class="math inline">\(a\)</span> 替换为 <span
+class="math inline">\(a^{-1}\)</span> 立得 <span
+class="math inline">\(a^{-1}N(a^{-1})^{-1}=a^{-1}Na\subset
+N\)</span>，那么结论就是显然的了.</em></p>
+<p>一般而言， <span class="math inline">\((12),(13)\)</span>
+在实践中能更好地利用正规子群的性质.</p>
 <p>利用上面的铺垫，我们有几个简单的论断</p>
 <blockquote>
 <p>论断3：任意个正规子群的交还是正规子群.</p>
 </blockquote>
-<p><em>利用 $(13)$ 就能简洁地证明，这里略去证明.</em></p>
+<p><em>利用 <span class="math inline">\((13)\)</span>
+就能简洁地证明，这里略去证明.</em></p>
 <blockquote>
-<p>论断4：对于群 $G$，有 ${e} \lhd G,G \lhd G$.</p>
+<p>论断4：对于群 <span class="math inline">\(G\)</span>，有 <span
+class="math inline">\(\{e\} \lhd G,G \lhd G\)</span>.</p>
 </blockquote>
 <blockquote>
 <p>论断5：交换群的子群都是正规子群.</p>
 </blockquote>
 <p><em>这些论断的证明都是平凡的，略去.</em></p>
+<hr />
+<h2 id="群的同构定理">群的同构定理</h2>
+<p>接下来是目前为止最重要的成果</p>
+<blockquote>
+<p>定理5（第一同构定理）：设 <span class="math inline">\(f:G \rightarrow
+H\)</span> 是群 <span class="math inline">\(G\)</span> 到 <span
+class="math inline">\(H\)</span> 的同态，则有</p>
+<p><span class="math display">\[
+\operatorname{ker}(G) \lhd G
+\]</span></p>
+<p>且</p>
+<p><span class="math display">\[
+G/\operatorname{ker}(G) \simeq \operatorname{im}(f) \tag{14}
+\]</span></p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>首先，需要证明 <span class="math inline">\(\operatorname{ker}(G)
+\lhd G\)</span>，设 <span class="math inline">\(a\in G,n \in
+\operatorname{ker}(G)\)</span>，有</em></p>
+<p><span class="math display">\[
+f(ana^{-1})=f(a)e&#39;f(a)^{-1}=e&#39;
+\]</span></p>
+<p><em>根据引理3，结论得证.设 <span class="math inline">\(N=
+\operatorname{ker}(G)\)</span>，我们构造映射</em></p>
+<p><span class="math display">\[
+F:G/N \rightarrow \operatorname{im}(f)
+\]</span></p>
+<p><em>定义为</em></p>
+<p><span class="math display">\[
+F(aN)=f(a),a\in G \tag{15}
+\]</span></p>
+<p><em>验证是否良定义，即对于 <span
+class="math inline">\(aN=a&#39;N\)</span>，是否有 <span
+class="math inline">\(f(a)=f(a&#39;)\)</span>。我们立刻有 <span
+class="math inline">\(aa&#39;^{-1} \in N\)</span>，<span
+class="math inline">\(f(aa&#39;^{-1})=e&#39;\)</span>，从而 <span
+class="math inline">\(f(a)f(a&#39;^{-1})=e&#39;,a^{-1}=a&#39;^{-1},a=a&#39;\)</span>.这就是良定义的.</em></p>
+<p><em>下面验证 <span class="math inline">\(F\)</span>
+的同态、单射、满射.</em></p>
+<p><em>同态：</em></p>
+<p><span class="math display">\[
+F(aN)F(bN)=f(a)f(b)=f(ab)=F(abN)=F(aNbN)
+\]</span></p>
+<p><em>单射：只需验证 <span class="math inline">\(\operatorname{ker}(aN)
+= \{N\}\)</span>.设 <span
+class="math inline">\(F(aN)=e&#39;\)</span>，即 <span
+class="math inline">\(f(a)=e&#39;\)</span>，从而 <span
+class="math inline">\(a\in N\)</span>，因此 <span
+class="math inline">\(aN=N\)</span>.</em></p>
+<p><em>满射：设 <span class="math inline">\(a&#39;\in H\)</span>，取
+<span class="math inline">\(a:f(a)=a&#39;\)</span>，即得 <span
+class="math inline">\(F(aN)=f(a)=a&#39;\)</span>.</em></p>
+<p><em>综上，<span class="math inline">\(F\)</span>
+是一个群同构，因此定理得证.</em></p>
+<p>定理表明了从任意的群同态，可以构造出群同构.这是非常良好的性质.</p>
+<p>下面的例子表明了定理（可能）在算法竞赛中的应用.</p>
+<p>设有群同态 <span class="math inline">\(f:C_7 \rightarrow
+C_{16}\)</span>，<span class="math inline">\(f\)</span>
+必然是平凡的.这是因为根据定理，必然有 <span
+class="math inline">\(|\operatorname{im}(f)|
+\mid|C_{16}|\)</span>（子群）和 <span
+class="math inline">\(|\operatorname{im}(f)|
+\mid|C_{7}|\)</span>.第二点是因为根据定理，</p>
+<p><span class="math display">\[
+|G|=|\operatorname{im}(f)||\operatorname{ker}(G)| \tag{16}
+\]</span></p>
+<p>从而 <span class="math inline">\(\operatorname{im}(f) \mid
+\gcd(16,9)\)</span>，这就说明了平凡性.</p>
+<p>从第一同构定理可以推出第二、第三同构定理.</p>
+<blockquote>
+<p>定理6（第二同构定理）：设 <span class="math inline">\(H&lt;G,N \lhd
+G\)</span>，则 <span class="math inline">\(H\cap N \lhd H，N\lhd
+HN\)</span>，且</p>
+<p><span class="math display">\[
+H/(H \cap N)\simeq HN/N \tag{17}
+\]</span></p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>首先需要证明前两条.</em></p>
+<p><em>首先令 <span class="math inline">\(h \in H,x\in H\cap
+N\)</span>，有 <span class="math inline">\(hxh^{-1}\in
+H\)</span>，同时根据 <span class="math inline">\(N\)</span> 的正规性，
+<span class="math inline">\(hxh^{-1} \in
+N\)</span>.这就证明了第一条.</em></p>
+<p>其次，需要证明 <span class="math inline">\(HN\)</span>
+是个群，根据论断2和 <span class="math inline">\(N\)</span>
+的正规性就可以得出.</p>
+<p><em>再令 <span class="math inline">\(hn \in HN,n&#39;\in
+N\)</span>，则 <span
+class="math inline">\(hnn&#39;(hn)^{-1}=hnn&#39;n^{-1}h^{-1}\)</span>，<span
+class="math inline">\(nn&#39;n^{-1}\in
+N\)</span>，这就证明了第二条.</em></p>
+<p><em>于是可以构造映射</em></p>
+<p><span class="math display">\[
+H \rightarrow HN/N : f(h)=hN \tag{18}
+\]</span></p>
+<p><em>良定义性由引理2保证，同态性由 <span
+class="math inline">\(H\)</span> 的子群性质保证，下面证明 <span
+class="math inline">\(\operatorname{ker}(f)= H\cap N\)</span>.这是因为
+<span class="math inline">\(\forall h \in H,hN=N \Rightarrow h\in N,h
+\in H \cap N\)</span>.根据第一同构定理，这就完成了证明.</em></p>
+<p>这就是定理3有了正规性的更强形式.</p>
+<blockquote>
+<p>定理7（第三同构定理）：设 <span class="math inline">\(N\lhd G,M \lhd
+G,M&lt;N\)</span>,则 <span class="math inline">\(N/M \lhd
+G/M\)</span>，且</p>
+<p><span class="math display">\[
+(G/M)/(N/M) \simeq G/N \tag{19}
+\]</span></p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>先证明第一条.首先，我们要证明 <span
+class="math inline">\(N/M\)</span> 是一个群，也就是证明 <span
+class="math inline">\(M\)</span> 关于 <span
+class="math inline">\(N\)</span> 的正规性.这完全可以由 <span
+class="math inline">\(M\)</span> 关于 <span
+class="math inline">\(G\)</span> 的正规性保证.</em></p>
+<p><em>其次，我们取 <span class="math inline">\(nM \in N/M,gM \in
+G/M\)</span>，则</em></p>
+<p><span class="math display">\[
+nMgM(nM)^{-1}=ngn^{-1}M=g&#39;M\in G/M,g&#39;\in G \tag{20}
+\]</span></p>
+<p><em>这就完成了正规性的证明.</em></p>
+<p><em>下面证明 <span
+class="math inline">\((19)\)</span>，我们构造映射</em></p>
+<p><span class="math display">\[
+G/M \rightarrow G/N:f(gM)=gN \tag{21}
+\]</span></p>
+<p><em>良定义性由引理2保证，同态性由 <span
+class="math inline">\(G\)</span> 的运算保持，只需证明 <span
+class="math inline">\(\operatorname{ker}(f)=N/M\)</span>.我们设 <span
+class="math inline">\(f(nM)=N\)</span>，根据商集的定义，自然有 <span
+class="math inline">\(nM \in
+N/M\)</span>.从而根据第一同构定理，这就完成了证明.</em></p>
+<p>这就是定理2有了正规性的更强形式.</p>
 ]]></content>
       <categories>
         <category>数学</category>
