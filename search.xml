@@ -1846,6 +1846,7 @@ class="math inline">\(V\)</span> 的元素，这与假设矛盾.</em></p>
 <li>任意开集的并是开集.</li>
 <li>有限开集的交是开集.</li>
 </ol>
+<hr />
 </blockquote>
 <p><strong><em>证明：</em></strong></p>
 <p><em>性质1是显然的.</em></p>
@@ -1889,7 +1890,16 @@ class="math inline">\(\{0\}\)</span>，显然不是开集.</p>
 class="math inline">\(A\)</span> 的所有极限点（闭包点）的集合，记作
 <span class="math inline">\(\overline A = cl(A)\)</span>.</p>
 </blockquote>
-<p>很自然地我们想替换闭集的语言</p>
+<p>形式化地</p>
+<blockquote>
+<p>定义5'：</p>
+<p><span class="math display">\[
+\overline A = \{x\in \mathbb R:\forall\epsilon&gt;0,\exists a\in
+A,|x-a|&lt;\epsilon\}=\{x\in \mathbb
+R:\forall\epsilon&gt;0,B(x,\epsilon) \cap A \neq \emptyset\} \tag2
+\]</span></p>
+</blockquote>
+<p>由此，很自然地我们想替换闭集的语言</p>
 <blockquote>
 <p>引理2：<span class="math inline">\(V\)</span> 是 $ R $
 的闭子集当且仅当 <span class="math inline">\(V= \overline
@@ -1907,7 +1917,7 @@ R\)</span>，我们有</p>
 <p><span class="math display">\[
 \operatorname{Int}(A)  = \{x \in  \mathbb R :\exists \epsilon
 &gt;0,B(x,\epsilon) \subset A \}=\{x \in  \mathbb R :\exists \epsilon
-&gt;0,B(x,\epsilon) \cap  \mathbb R -A =\emptyset \} \tag2
+&gt;0,B(x,\epsilon) \cap  \mathbb R -A =\emptyset \} \tag3
 \]</span></p>
 <ol start="2" type="1">
 <li><span class="math inline">\(A\)</span> 的外部</li>
@@ -1915,16 +1925,135 @@ R\)</span>，我们有</p>
 <p><span class="math display">\[
 \operatorname{Ext}(A)=\{x \in  \mathbb R :\exists \epsilon
 &gt;0,B(x,\epsilon) \subset  \mathbb R -A \}=\{x \in  \mathbb R :\exists
-\epsilon &gt;0,B(x,\epsilon) \cap  A =\emptyset \} \tag3
+\epsilon &gt;0,B(x,\epsilon) \cap  A =\emptyset \} \tag4
 \]</span></p>
 <ol start="3" type="1">
 <li><span class="math inline">\(A\)</span> 的边界</li>
 </ol>
 <p><span class="math display">\[
-\partial A = \mathbb R-\operatorname{Int}(A)-\operatorname{Ext}(A) \tag4
+\partial A = \mathbb R-\operatorname{Int}(A)-\operatorname{Ext}(A) \tag5
 \]</span></p>
 </blockquote>
-<p>这样我们就能刻画一个拓扑的内、外、边界了.下一节将讨论边界的性质.</p>
+<p>这样我们就能刻画一个拓扑的内、外、边界了.</p>
+<hr />
+<p>现在我们来讨论这三个部分之间的关系.下面的证明基本上都是上面定义的集合意义上的轱辘话，需要熟悉集合的语言.</p>
+<blockquote>
+<p>引理3：<span class="math inline">\(\operatorname{Int}(A) \cap
+\operatorname{Ext}(A)=\emptyset\)</span>.</p>
+</blockquote>
+<p><em>证明 ：<span class="math inline">\(\forall x\in
+\operatorname{Int}(A),y\in \operatorname{Ext}(A),\exists
+\epsilon_1&gt;0,\epsilon_2&gt;0,B(x,\epsilon_1) \subset
+A,B(x,\epsilon_2)\subset A^{C}\)</span>.</em></p>
+<blockquote>
+<p>引理4：<span class="math inline">\(\operatorname{Int}(A)=
+\operatorname{Ext}(A^{C})\)</span>.</p>
+</blockquote>
+<p><em>证明：将定义中的 <span class="math inline">\(A\)</span> 替换为
+<span class="math inline">\(A^C\)</span> 即可.</em></p>
+<p>由此我们可以引出下面的基本性质</p>
+<blockquote>
+<p>引理5：</p>
+<ol type="1">
+<li><span class="math inline">\(\operatorname{Int}(A) \subset
+A\)</span>.</li>
+<li><span class="math inline">\(\operatorname{Ext}(A) \cap A =
+\emptyset\)</span>.</li>
+<li><span
+class="math inline">\(\operatorname{Int}(A),\operatorname{Ext}(A)\)</span>
+都是开的.</li>
+<li><span class="math inline">\(A \cup \partial A=\operatorname{Int}(A)
+\sqcup \partial A\)</span> 是闭的.</li>
+</ol>
+</blockquote>
+<p><em>证明：</em></p>
+<ol type="1">
+<li><p><em>考虑 <span class="math inline">\((2)\)</span> 中的开球一定是
+<span class="math inline">\(A\)</span> 的子集即可得证.</em></p></li>
+<li><p><em>对于原式稍作调整即证 <span
+class="math inline">\(\operatorname{Ext}(A) \subset
+A^C\)</span>.结合第一条以及引理4得证.</em></p></li>
+<li><p><em>根据引理4，只需证内部是开的.我们任取 <span
+class="math inline">\(x \in \operatorname{Int}(A), \epsilon
+&gt;0\)</span>，使得以 <span class="math inline">\(x\)</span>
+为圆心，<span class="math inline">\(\epsilon\)</span> 为半径的开球是
+<span class="math inline">\(A\)</span> 的子集.那么我们再任取 <span
+class="math inline">\(y \in B(x,\epsilon)\)</span>，根据定义，它必须是
+<span class="math inline">\(A\)</span> 的内部的元素.取 <span
+class="math inline">\(\epsilon&#39; = \epsilon -
+|x-y|\)</span>，容易得到</em></p>
+<p><span class="math display">\[
+\forall z \in
+B(y,\epsilon&#39;),|x-z|=|x-y+(y-z)|&lt;|x-y|+|y-z|&lt;\epsilon&#39;+|x-y|=\epsilon
+\]</span></p>
+<p><em>（利用三角不等式），也就是 <span
+class="math inline">\(B(y,\epsilon&#39;) \subset B(x,\epsilon) \subset
+\operatorname{Int}(A)\)</span>.考虑 <span
+class="math inline">\(x\)</span> 可以取遍 <span
+class="math inline">\(A\)</span> 的内部，这就证明了 <span
+class="math inline">\(\operatorname{Int}(A)\)</span>
+是开集.</em></p></li>
+<li><p><em>先证等号.根据第一条显然有左包含右，现证右包含左.只需证 <span
+class="math inline">\(A \subset \operatorname{Int}(A) \sqcup \partial
+A\)</span>.即证 <span class="math inline">\(A \cap \operatorname{Ext}(A)
+= \emptyset\)</span>，根据第二条得证.再证闭集，考虑到第三条有 <span
+class="math inline">\(A\)</span>
+的外部是开集，根据开集闭集的互补性质立即得证.</em></p></li>
+</ol>
+<p>根据上面的性质，我们就有了以下非常重要的性质</p>
+<blockquote>
+<p>定理4：</p>
+<ol type="1">
+<li><span class="math inline">\(A\)</span> 是开的当且仅当 <span
+class="math inline">\(A= \operatorname{Int}(A)\)</span>.</li>
+<li><span class="math inline">\(\overline A=A\cup \partial
+A\)</span>.</li>
+<li><span class="math inline">\(A\)</span> 是闭的当且仅当 <span
+class="math inline">\(\partial A \subset A\)</span>.</li>
+</ol>
+</blockquote>
+<p><em>证明：</em></p>
+<ol type="1">
+<li><em>根据引理5第一条以及开集的定义得证.</em></li>
+<li><em>注意到右端就是 <span
+class="math inline">\(\operatorname{Ext}(A)^C\)</span>，即 <span
+class="math inline">\(\forall x\in A\cup \partial A,\forall \epsilon
+&gt;0,B(x,\epsilon) \cap A \neq\emptyset \}\)</span>，与 <span
+class="math inline">\((2)\)</span> 一致.</em></li>
+<li><em>利用第二条得证.</em></li>
+</ol>
+<p>下面我们利用闭包和内部来衡量开集和闭集的大小</p>
+<blockquote>
+<p>定理5：<span class="math inline">\(\operatorname{Int}(A)\)</span> 是
+<span class="math inline">\(A\)</span> 的子开集中最大的开集，<span
+class="math inline">\(\overline A\)</span> 是包含了 <span
+class="math inline">\(A\)</span> 的闭集中最大的闭集.</p>
+</blockquote>
+<p><em>证明：首先证明第一点.我们设 <span class="math inline">\(U \subset
+\operatorname{Int}(A)\)</span> 是开集，就显然有 <span
+class="math inline">\(\operatorname{Int}(U) \subset U
+\subset\operatorname{Int}(A)\)</span> .再证明第二点，设 <span
+class="math inline">\(A \subset V\)</span>，<span
+class="math inline">\(V\)</span> 是闭集，则 <span
+class="math inline">\(\overline A \subset \overline V \subset
+V\)</span>.</em></p>
+<p>将来的拓扑空间中将会将这条定理作为公理.</p>
+<p>我们还有两条对称的性质</p>
+<blockquote>
+<p>论断3：设 <span class="math inline">\(A\subset R\)</span>，</p>
+<ol type="1">
+<li><span class="math display">\[
+(\operatorname{Int}(A))^C=\overline {(A^C)} \tag6
+\]</span></li>
+<li><span class="math display">\[
+\overline A^C  =\operatorname{Int}(A^C) \tag{6&#39;}
+\]</span></li>
+</ol>
+</blockquote>
+<p><em>证明：注意到这两条是互补的，只证 <span
+class="math inline">\((6)\)</span> .注意到 <span
+class="math inline">\(\partial A = \partial
+A^C\)</span>，利用定理4的第2条及引理5的第4条即可得证.</em></p>
 ]]></content>
       <categories>
         <category>点集拓扑</category>
