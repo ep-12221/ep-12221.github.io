@@ -1715,6 +1715,128 @@ class="math inline">\(f(nM)=N\)</span>，根据商集的定义，自然有 <span
 class="math inline">\(nM \in
 N/M\)</span>.从而根据第一同构定理，这就完成了证明.</em></p>
 <p>这就是定理2有了正规性的更强形式.</p>
+<hr />
+<h2 id="群作用">群作用</h2>
+<p>先回顾置换群的概念</p>
+<blockquote>
+<p>论断4：对于集合 <span class="math inline">\(S\)</span>，所有双射
+<span class="math inline">\(f_i:S\to S\)</span> 构成的集合 <span
+class="math inline">\(\operatorname{Perm}(S)\)</span> 与复合运算 $ $
+构成群，记为 <span
+class="math inline">\((\operatorname{Perm}(S),\circ)\)</span>.</p>
+</blockquote>
+<p>略去证明.</p>
+<p>我们现在从一个最简单的双射引出群作用的概念.设</p>
+<p><span class="math display">\[
+f_x:G\to G \tag{22}
+\]</span></p>
+<p>是一族群 <span class="math inline">\(G\)</span>
+到自身的映射，定义为</p>
+<p><span class="math display">\[
+f_x(y)=xy \tag{23}
+\]</span></p>
+<p>显然对于固定的 <span class="math inline">\(x\)</span>
+这是一个双射.也就是说，固定一个 <span class="math inline">\(x\)</span>
+我们可以得到一个 <span
+class="math inline">\(\operatorname{Perm}(G)\)</span> 的元素 <span
+class="math inline">\(f_x\)</span>，这启发我们枚举所有 <span
+class="math inline">\(G\)</span>
+的元素，它们都可以对应上（或者说是映射到） <span
+class="math inline">\(\operatorname{Perm}(G)\)</span>
+的一个元素（这个元素的类型是映射）.形式化地，</p>
+<p><span class="math display">\[
+g(x):=f_x:G\to G \tag{24}
+\]</span></p>
+<p>同时注意到这样的映射是群到群的映射，我们自然而然地猜测这个映射是个群同态.即证</p>
+<p><span class="math display">\[
+g(xy)=g(x)\circ g(y) \tag{25}
+\]</span></p>
+<p>注意，等号两端都是映射.为了证明映射相同，我们即需证</p>
+<p><span class="math display">\[
+\forall z \in G,g(xy)|_z=(g(x)\circ g(y))|_z \tag{26}
+\]</span></p>
+<p>而根据定义显然有</p>
+<p><span class="math display">\[
+g(xy)|_z=(xy)z=x(yz)=g(x)|_{g(y)|_z}=(g(x) \circ g(y))|_z \tag{27}
+\]</span></p>
+<p>这就完成了证明.</p>
+<p>我们希望研究更多类似于这样的双射 <span
+class="math inline">\(f_x\)</span>，能找到到一个置换群的同态 <span
+class="math inline">\(\phi\)</span> ，于是我们引入了以下定义</p>
+<blockquote>
+<p>定义4：我们称 <span class="math inline">\(\phi(x)\)</span> 是群 <span
+class="math inline">\(G\)</span> 在集合 <span
+class="math inline">\(S\)</span> 上的群作用，若它满足存在一族双射 <span
+class="math inline">\(f_i\)</span></p>
+<p><span class="math display">\[
+\phi(x):G\to \operatorname{Perm}(S),\phi(x):=f_x(G\to S) \tag{28}
+\]</span></p>
+<p>是一个 <span class="math inline">\(G\)</span> 到 <span
+class="math inline">\(\operatorname{Perm}(S)\)</span>
+的群同态.在不引起混淆的情况下，我们将 <span
+class="math inline">\(\phi(x)|_s\)</span> 简记为 <span
+class="math inline">\(x \cdot s\)</span> 或 <span
+class="math inline">\(xs\)</span>.</p>
+</blockquote>
+<p>定义可能有些抽象，理解时可以先抛开映射的具体内涵，把它理解成一个众多数据类型中的一种，就非常好理解了.群作用的定义包括
+<span class="math inline">\(f_x\)</span> 和 <span
+class="math inline">\(\phi\)</span> 两个映射.</p>
+<p>必须注意上面指的映射族必须是双射.</p>
+<p>上述的左乘作用就是一个 <span class="math inline">\(G \to G\)</span>
+的群作用.我们再举一个更加重要的例子.</p>
+<blockquote>
+<p>论断5：定义</p>
+<p><span class="math display">\[
+f_x:G \to G,f_x(y):=xyx^{-1}\\
+\phi(x):=f_x(G \to G) \tag{29}
+\]</span></p>
+<p>是共轭作用.它是一个 <span class="math inline">\(G \to G\)</span>
+的群作用.</p>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>双射是显然的，因为</em></p>
+<p><span class="math display">\[
+f_x\circ f_{x^{-1}}(y)=y \tag{30}
+\]</span></p>
+<p><em>也就是说任意的 <span class="math inline">\(f_x\)</span>
+都存在逆映射.并且显然地有</em></p>
+<p><span class="math display">\[
+\forall z\in G,\phi(x)\circ
+\phi(y)|_z=xyzy^{-1}x^{-1}=xyz(xy)^{-1}=\phi(xy)|_z \tag{31}
+\]</span></p>
+<p><em>这就证明了论断.</em></p>
+<p>并且共轭作用还有一个很好的性质</p>
+<blockquote>
+<p>论断6：上述 <span class="math inline">\(f_x\)</span>
+是一个自同构.</p>
+</blockquote>
+<p>熟读上面证明就会发现这是显然的，略去证明.</p>
+<blockquote>
+<p>定义5：形如上述 <span class="math inline">\(f_x\)</span>
+的自同构称为内自同构，其余的同构称为外自同构.</p>
+</blockquote>
+<p>回到群作用.我们有下述引理</p>
+<blockquote>
+<p>引理4：<span class="math inline">\(\phi\)</span>
+是一个群作用与同时满足下述条件等价</p>
+<ol type="1">
+<li><span class="math display">\[
+\forall s\in S,e\cdot s=s \tag{32.1}
+\]</span></li>
+<li><span class="math display">\[
+\forall x,y \in G,s\in S,x\cdot (y \cdot s)=(xy) \cdot s \tag{32.2}
+\]</span></li>
+</ol>
+</blockquote>
+<p><em>证明：</em></p>
+<p><em>正推是非常显然的.反推的同态性由第二式保证，我们只需证明所有的
+<span class="math inline">\(\phi(x)\)</span>
+都存在逆映射，也就是它是双射.不难发现</em></p>
+<p><span class="math display">\[
+x\cdot( x^1 \cdot s)=(xx^{-1})\cdot s=e \cdot
+s=s\tag{33}
+\]</span></p>
+<p><em>这就完成了证明.（注意第一条是不可或缺的）</em></p>
 ]]></content>
       <categories>
         <category>数学</category>
